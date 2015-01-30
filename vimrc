@@ -110,7 +110,7 @@ let g:quickrun_config['tex'] = {
 						\		'outputter' : 'error',
 						\		'outputter/error/error' : 'quickfix',
 						\		'cmdopt': '-pdfdvi',
-						\		'exec': ['%c %o %s','xdg-open %s:r.pdf']
+						\		'exec': ['%c %o %s','evince %s:r.pdf']
 						\ }
 
 "'''''''''''''''''''Haskell Setup''''''''''''''''''

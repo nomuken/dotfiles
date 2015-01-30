@@ -48,9 +48,8 @@ terminalSetting = "gnome-terminal"
 
 -- startup command
 startupSetting = do
-		spawn "fcitx"
 		spawn "/usr/bin/xscreensaver -no-splash &"
-		spawn "stalonetray -i 1 --geometry 6x1-0"
+		spawn "stalonetray -i 1 --geometry 6x1-510 -bg black &"
 		spawn "xmodmap ~/.Xmodmap"
 		spawn "nitrogen --restore"
 		spawn "amixer set Master 0"
