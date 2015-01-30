@@ -24,8 +24,7 @@ main = do
 												layoutHook = toggleLayouts (noBorders Full) $ avoidStruts $ myLayout
 												}
 												`additionalKeysP`
-												[("M1-l",spawn "xscreensaver-command -lock"),
-												("C-S-4",spawn "gnome-screenshot --area")]
+												shortcutSetings
 												`additionalKeys`
 												[
 												((0                       , 0x1008ff13), spawn "amixer set Master 5%+ && aplay /opt/mikutter/core/skin/data/sounds/mikuxtu-se.wav") --require mikutter
@@ -36,6 +35,14 @@ main = do
 -- leyout(Copy from internet)
 myLayout =   spacing 4 $ ResizableTall 1 (3/100) (1/2) []
 
+-- MyShortcutKeys
+shortcutSetings = [("M1-l",spawn "xscreensaver-command -lock"),
+									("C-S-4",spawn "gnome-screenshot --area"),
+									("M1-C-p",spawn "xrandr-out"),
+									("M1-C-r",spawn "xrandr-in"),
+									("M1-C-w",spawn "xrandr-d-left"),
+									("M1-C-q",spawn "xrandr-d-right")
+									]
 -- default terminal app
 terminalSetting = "gnome-terminal"
 
@@ -47,4 +54,6 @@ startupSetting = do
 		spawn "xmodmap ~/.Xmodmap"
 		spawn "nitrogen --restore"
 		spawn "amixer set Master 0"
+		spawn "pulseaudio --start"
+		spawn "alsactl restore"
 		setWMName "LG3D"

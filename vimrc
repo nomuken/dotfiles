@@ -78,6 +78,8 @@ if has('vim_starting')
 		NeoBundle 'w0ng/vim-hybrid'
 		NeoBundle 'chriskempson/vim-tomorrow-theme'
 		NeoBundle 'vim-ruby/vim-ruby'
+		"fcitx fix
+		NeoBundle 'anekos/felis-cat-igirisu-toast-express'
 		"NeoBundle 'mattn/multi-vim'
 		filetype plugin indent on			" Required!
 	
