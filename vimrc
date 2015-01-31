@@ -148,7 +148,7 @@ autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=#333344 ctermbg=darkgr
 
 "'''''''''''''''''''nerdtree関連''''''''''''''''''''
 "NERDTREEをなにも開くものがなければ利用する
-"autocmd vimenter * if !argc() | NERDTree | endif
+" autocmd vimenter * if !argc() | Unite | endif
 
 "全部のバッファを閉じたら消す
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif

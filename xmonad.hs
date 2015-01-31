@@ -55,4 +55,5 @@ startupSetting = do
 		spawn "amixer set Master 0"
 		spawn "pulseaudio --start"
 		spawn "alsactl restore"
+		spawn "owncloud"
 		setWMName "LG3D"
