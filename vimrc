@@ -78,6 +78,16 @@ if has('vim_starting')
 		NeoBundle 'w0ng/vim-hybrid'
 		NeoBundle 'chriskempson/vim-tomorrow-theme'
 		NeoBundle 'vim-ruby/vim-ruby'
+
+		" Markdown syntax
+		NeoBundle "godlygeek/tabular"
+		NeoBundle "joker1007/vim-markdown-quote-syntax"
+		NeoBundle "rcmdnk/vim-markdown"
+		let g:vim_markdown_liquid=1
+		let g:vim_markdown_frontmatter=1
+		let g:vim_markdown_math=1
+		au BufRead,BufNewFile *.{txt,text} set filetype=markdown
+
 		"fcitx fix
 		NeoBundle 'anekos/felis-cat-igirisu-toast-express'
 		"NeoBundle 'mattn/multi-vim'
@@ -99,6 +109,9 @@ if has('vim_starting')
 		NeoBundle 'eagletmt/ghcmod-vim'
 		NeoBundle 'thinca/vim-quickrun'
 		NeoBundle 'kana/vim-filetype-haskell'
+
+		NeoBundle 'violetyk/neocomplete-php.vim'
+		let g:neocomplete_php_locale = 'ja'
 "''''''''''''''''''TeX Setup''''''''''''''''''''''
 let g:quickrun_config = {}
 " let g:quickrun_config['tex'] = {
@@ -122,8 +135,13 @@ nmap	<C-T>	:GhcModType<CR>
 nmap	<S-T>	:GhcModTypeClear<CR>
 nmap	run	:QuickRun<CR>
 
-"'''''''''''''''''''Ruby関連''''''''''''''''''''''''
-"
+"'''''''''''''''''''Python関連''''''''''''''''''''''''
+NeoBundle 'davidhalter/jedi-vim'
+"右にな，こういい感じにしたいよな
+let g:jedi#use_splits_not_buffers = "right"
+
+NeoBundle 'kevinw/pyflakes-vim'
+
 
 "''''''''''''''''Indent guide'''''''''''''''''''''''
 "Indentで線を引こうぜ
@@ -166,10 +184,16 @@ NeoBundle 'Shougo/unite.vim'
 "キーボードショートカットの設定
 "（<C-M>はCtrl+Mという意味）
 
+"file_mruを軽いノリで表示できるようにする
+noremap <C-F>		:Unite file_mru<CR>
+
+"新規ファイルも軽いノリで使えるようにしたいよね
+noremap <C-N>		:Unite file/new<CR>
+
 "buffer一覧
 noremap <C-U><C-P> :Unite buffer<CR>
 "ファイル一覧
-noremap <C-U><C-F> :UniteWithBufferDir -buffer-name=files file<CR>
+noremap <C-G> :UniteWithBufferDir -buffer-name=files file<CR>
 " ウィンドウを分割して開く
 au FileType unite nnoremap <silent> <buffer> <expr> <C-J> unite#do_action('split')
 au FileType unite inoremap <silent> <buffer> <expr> <C-J> unite#do_action('split')
