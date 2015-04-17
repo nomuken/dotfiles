@@ -15,6 +15,7 @@ set nowritebackup
 set number
 
 "''インデント系
+set expandtab "改宗しました
 set tabstop=2 "画面上でタブ文字が占める幅
 set shiftwidth=2 "自動インデントでずれる幅
 set softtabstop=2 "連続した空白に対してタブキーやバックスペースキーでカーソルが動く幅
@@ -78,6 +79,7 @@ if has('vim_starting')
 		NeoBundle 'w0ng/vim-hybrid'
 		NeoBundle 'chriskempson/vim-tomorrow-theme'
 		NeoBundle 'vim-ruby/vim-ruby'
+		NeoBundle 'nono/vim-handlebars'
 
 		" Markdown syntax
 		NeoBundle "godlygeek/tabular"
@@ -141,6 +143,22 @@ NeoBundle 'davidhalter/jedi-vim'
 let g:jedi#use_splits_not_buffers = "right"
 
 NeoBundle 'kevinw/pyflakes-vim'
+
+
+"''''''''''''''''node setting'''''''''''''''''''''''
+"Syntax highlight
+NeoBundle 'jelera/vim-javascript-syntax'
+NeoBundle 'mattn/jscomplete-vim'
+NeoBundle 'myhere/vim-nodejs-complete'
+
+"丸コピ
+autocmd FileType javascript setlocal omnifunc=nodejscomplete#CompleteJS
+if !exists('g:neocomplcache_omni_functions')
+  let g:neocomplcache_omni_functions = {}
+endif
+let g:neocomplcache_omni_functions.javascript = 'nodejscomplete#CompleteJS'
+
+let g:node_usejscomplete = 1
 
 
 "''''''''''''''''Indent guide'''''''''''''''''''''''
