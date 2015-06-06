@@ -41,101 +41,166 @@ nmap QQ :q!<CR>
 
 "''''''''''''突然のNeoBundleの設定'''''''''''
 
-set nocompatible							 " Be iMproved
+set nocompatible               " Be iMproved
 
 filetype off
 
 if has('vim_starting')
-		set runtimepath+=~/.vim/bundle/neobundle.vim/
-		endif
+    set runtimepath+=~/.vim/bundle/neobundle.vim/
+    endif
 
-		call neobundle#begin(expand('~/.vim/bundle/'))
-		NeoBundleFetch 'Shougo/neobundle.vim'
-		call neobundle#end()
-		
-		" Let NeoBundle manage NeoBundle
-		NeoBundleFetch 'Shougo/neobundle.vim'
+    call neobundle#begin(expand('~/.vim/bundle/'))
+    NeoBundleFetch 'Shougo/neobundle.vim'
+    call neobundle#end()
+    
+    " Let NeoBundle manage NeoBundle
+    NeoBundleFetch 'Shougo/neobundle.vim'
 
-		" Recommended to install
-		NeoBundle 'Shougo/vimproc', {
-					\ 'build' : {
-					\			'windows' : 'make -f make_mingw32.mak',
-					\			'cygwin' : 'make -f make_cygwin.mak',
-					\			'mac' : 'make -f make_mac.mak',
-					\			'unix' : 'make -f make_unix.mak',
-					\		 },
-					\ }
+    " Recommended to install
+    NeoBundle 'Shougo/vimproc', {
+          \ 'build' : {
+          \     'windows' : 'make -f make_mingw32.mak',
+          \     'cygwin' : 'make -f make_cygwin.mak',
+          \     'mac' : 'make -f make_mac.mak',
+          \     'unix' : 'make -f make_unix.mak',
+          \    },
+          \ }
 
-		" My Bundles here:
-		"
-		" Original repos on github
-		NeoBundle 'Shougo/vimshell'
-		NeoBundle 'terryma/vim-multiple-cursors.git'
-		NeoBundle 'tpope/vim-surround'
-		NeoBundle 'scrooloose/syntastic'
-		NeoBundle 'scrooloose/nerdtree'
-		NeoBundle 'Shougo/neomru.vim'
-		NeoBundle 'MetalPhaeton/easybracket-vim'
-		NeoBundle 'w0ng/vim-hybrid'
-		NeoBundle 'chriskempson/vim-tomorrow-theme'
-		NeoBundle 'vim-ruby/vim-ruby'
-		NeoBundle 'nono/vim-handlebars'
+    " My Bundles here:
+    "
+    " Original repos on github
+    NeoBundle 'Shougo/vimshell'
+    NeoBundle 'terryma/vim-multiple-cursors.git'
+    NeoBundle 'tpope/vim-surround'
+    NeoBundle 'scrooloose/syntastic'
+    NeoBundle 'scrooloose/nerdtree'
+    NeoBundle 'Shougo/neomru.vim'
+    NeoBundle 'MetalPhaeton/easybracket-vim'
+    NeoBundle 'w0ng/vim-hybrid'
+    NeoBundle 'chriskempson/vim-tomorrow-theme'
+    NeoBundle 'vim-ruby/vim-ruby'
+    NeoBundle 'nono/vim-handlebars'
 
-		" Markdown syntax
-		NeoBundle "godlygeek/tabular"
-		NeoBundle "joker1007/vim-markdown-quote-syntax"
-		NeoBundle "rcmdnk/vim-markdown"
-		let g:vim_markdown_liquid=1
-		let g:vim_markdown_frontmatter=1
-		let g:vim_markdown_math=1
-		au BufRead,BufNewFile *.{txt,text} set filetype=markdown
+    " Markdown syntax
+    NeoBundle "godlygeek/tabular"
+    NeoBundle "joker1007/vim-markdown-quote-syntax"
+    NeoBundle "rcmdnk/vim-markdown"
+    let g:vim_markdown_liquid=1
+    let g:vim_markdown_frontmatter=1
+    let g:vim_markdown_math=1
+    au BufRead,BufNewFile *.{txt,text} set filetype=markdown
 
-		"fcitx fix
-		NeoBundle 'anekos/felis-cat-igirisu-toast-express'
-		"NeoBundle 'mattn/multi-vim'
-		filetype plugin indent on			" Required!
-	
-		"haml syntax
-		NeoBundle 'tpope/vim-haml'
-		
-		"slim syntax
-		NeoBundle "slim-template/vim-slim"
-		filetype plugin indent on
-		" Enable slim syntax highlight
-		autocmd FileType slim setlocal foldmethod=indent
-		autocmd BufNewFile,BufRead *.slim set filetype=slim
-	
-		"Writting for haskell
-		NeoBundle 'dag/vim2hs'
-		NeoBundle 'ujihisa/neco-ghc'
-		NeoBundle 'eagletmt/ghcmod-vim'
-		NeoBundle 'thinca/vim-quickrun'
-		NeoBundle 'kana/vim-filetype-haskell'
+    "fcitx fix
+    NeoBundle 'anekos/felis-cat-igirisu-toast-express'
+    "NeoBundle 'mattn/multi-vim'
+    filetype plugin indent on     " Required!
+  
+    "haml syntax
+    NeoBundle 'tpope/vim-haml'
+    
+    "slim syntax
+    NeoBundle "slim-template/vim-slim"
+    filetype plugin indent on
+    " Enable slim syntax highlight
+    autocmd FileType slim setlocal foldmethod=indent
+    autocmd BufNewFile,BufRead *.slim set filetype=slim
+  
+    "Writting for haskell
+    NeoBundle 'dag/vim2hs'
+    NeoBundle 'ujihisa/neco-ghc'
+    NeoBundle 'eagletmt/ghcmod-vim'
+    NeoBundle 'thinca/vim-quickrun'
+    NeoBundle 'kana/vim-filetype-haskell'
 
-		NeoBundle 'violetyk/neocomplete-php.vim'
-		let g:neocomplete_php_locale = 'ja'
+    NeoBundle 'violetyk/neocomplete-php.vim'
+    let g:neocomplete_php_locale = 'ja'
+
+"''''''''''''''''''lightline''''''''''''''''''''''
+NeoBundle 'itchyny/lightline.vim'
+set laststatus=2
+
+let g:lightline = {
+      \'colorscheme':'jellybeans',
+      \ 'mode_map': {'c': 'NORMAL'},
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ], [ 'fugitive', 'filename' ] ]
+      \ },
+      \ 'component_function': {
+      \   'modified': 'MyModified',
+      \   'readonly': 'MyReadonly',
+      \   'fugitive': 'MyFugitive',
+      \   'filename': 'MyFilename',
+      \   'fileformat': 'MyFileformat',
+      \   'filetype': 'MyFiletype',
+      \   'fileencoding': 'MyFileencoding',
+      \   'mode': 'MyMode'
+      \ }
+      \ }
+
+function! MyModified()
+  return &ft =~ 'help\|vimfiler\|gundo' ? '' : &modified ? '+' : &modifiable ? '' : '-'
+endfunction
+
+function! MyReadonly()
+  return &ft !~? 'help\|vimfiler\|gundo' && &readonly ? 'x' : ''
+endfunction
+
+function! MyFilename()
+  return ('' != MyReadonly() ? MyReadonly() . ' ' : '') .
+        \ (&ft == 'vimfiler' ? vimfiler#get_status_string() :
+        \  &ft == 'unite' ? unite#get_status_string() :
+        \  &ft == 'vimshell' ? vimshell#get_status_string() :
+        \ '' != expand('%:t') ? expand('%:t') : '[No Name]') .
+        \ ('' != MyModified() ? ' ' . MyModified() : '')
+endfunction
+
+function! MyFugitive()
+  try
+    if &ft !~? 'vimfiler\|gundo' && exists('*fugitive#head')
+      return fugitive#head()
+    endif
+  catch
+  endtry
+  return ''
+endfunction
+
+function! MyFileformat()
+  return winwidth(0) > 70 ? &fileformat : ''
+endfunction
+
+function! MyFiletype()
+  return winwidth(0) > 70 ? (strlen(&filetype) ? &filetype : 'no ft') : ''
+endfunction
+
+function! MyFileencoding()
+  return winwidth(0) > 70 ? (strlen(&fenc) ? &fenc : &enc) : ''
+endfunction
+
+function! MyMode()
+  return winwidth(0) > 60 ? lightline#mode() : ''
+endfunction
 "''''''''''''''''''TeX Setup''''''''''''''''''''''
 let g:quickrun_config = {}
 " let g:quickrun_config['tex'] = {
-" \				'command': 'latexmk',
-" \				'exec': ['%c %s', 'xdg-open %s:r.pdf']
+" \       'command': 'latexmk',
+" \       'exec': ['%c %s', 'xdg-open %s:r.pdf']
 " \}
 let g:quickrun_config['tex'] = {
-						\		'command' : 'latexmk',
-						\		'outputter' : 'error',
-						\		'outputter/error/error' : 'quickfix',
-						\		'cmdopt': '-pdfdvi',
-						\		'exec': ['%c %o %s','evince %s:r.pdf']
-						\ }
+            \   'command' : 'latexmk',
+            \   'outputter' : 'error',
+            \   'outputter/error/error' : 'quickfix',
+            \   'cmdopt': '-pdfdvi',
+            \   'exec': ['%c %o %s','evince %s:r.pdf']
+            \ }
 
 "'''''''''''''''''''Haskell Setup''''''''''''''''''
 "型推論関連
 "のパスを通す
 let $PATH = $PATH . ':' . expand('~/.cabal/bin')
 "マッピング
-nmap	<C-T>	:GhcModType<CR>
-nmap	<S-T>	:GhcModTypeClear<CR>
-nmap	run	:QuickRun<CR>
+nmap  <C-T> :GhcModType<CR>
+nmap  <S-T> :GhcModTypeClear<CR>
+nmap  run :QuickRun<CR>
 
 "'''''''''''''''''''Python関連''''''''''''''''''''''''
 NeoBundle 'davidhalter/jedi-vim'
@@ -190,9 +255,9 @@ autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=#333344 ctermbg=darkgr
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
 "<C-D>でどこでもONとOFFできるんだよ！
-nmap <silent> <C-D>			 :NERDTreeToggle<CR>
+nmap <silent> <C-D>      :NERDTreeToggle<CR>
 vmap <silent> <C-D> <Esc>:NERDTreeToggle<CR>
-omap <silent> <C-D>			 :NERDTreeToggle<CR>
+omap <silent> <C-D>      :NERDTreeToggle<CR>
 imap <silent> <C-D> <Esc>:NERDTreeToggle<CR>
 cmap <silent> <C-D> <C-u>:NERDTreeToggle<CR>
 
@@ -203,10 +268,10 @@ NeoBundle 'Shougo/unite.vim'
 "（<C-M>はCtrl+Mという意味）
 
 "file_mruを軽いノリで表示できるようにする
-noremap <C-F>		:Unite file_mru<CR>
+noremap <C-F>   :Unite file_mru<CR>
 
 "新規ファイルも軽いノリで使えるようにしたいよね
-noremap <C-N>		:Unite file/new<CR>
+noremap <C-N>   :Unite file/new<CR>
 
 "buffer一覧
 noremap <C-U><C-P> :Unite buffer<CR>
@@ -244,14 +309,14 @@ let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
 
 " 辞書ファイル
 let g:neocomplcache_dictionary_filetype_lists = {
-		\ 'default' : ''
-		\ }
+    \ 'default' : ''
+    \ }
 
 "" キーマップ
 "前回の補完をキャンセルするんだよ！
-inoremap <expr><C-g>		 neocomplcache#undo_completion()
+inoremap <expr><C-g>     neocomplcache#undo_completion()
 "共通する部分を保管するよ！
-inoremap <expr><C-l>		 neocomplcache#complete_common_string()
+inoremap <expr><C-l>     neocomplcache#complete_common_string()
 "<C-H>と<BS>で候補表示を消去
 inoremap <expr><C-h> neocomplcache#smart_close_popup()."\<C-h>"
 inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
@@ -268,7 +333,7 @@ inoremap <expr><C-y> neocomplcache#close_popup()
 NeoBundle 'Shougo/neosnippet'
 ""キーバインドを変更する
 "tabで下を見て，Shift+tabで上に戻る
-inoremap <expr><S-TAB>	pumvisible() ? "\<C-p>" : "\<S-TAB>"
+inoremap <expr><S-TAB>  pumvisible() ? "\<C-p>" : "\<S-TAB>"
 imap <expr><TAB> neosnippet#jumpable() ? "\<Plug>(neosnippet_expand_or_jump)" : pumvisible() ? "\<C-n>" : "\<TAB>"
 smap <expr><TAB> neosnippet#jumpable() ? "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
 "入力文字候補をSnippetでCtrl+Kで展開するデース
