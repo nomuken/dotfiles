@@ -57,6 +57,6 @@ startupSetting = do
     spawn "pulseaudio --start"
     spawn "alsactl restore"
     spawn "owncloud"
+    spawn "xss-lock -- xscreensaver-command -lock &"
     spawn "xautolock -time 1 -locker 'xscreensaver-command -lock' &"
     setWMName "LG3D"
-

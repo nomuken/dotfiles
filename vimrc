@@ -48,78 +48,146 @@ set nocompatible               " Be iMproved
 
 filetype off
 
+
 if has('vim_starting')
-    set runtimepath+=~/.vim/bundle/neobundle.vim/
-    endif
+  set runtimepath+=~/.vim/bundle/neobundle.vim/
+endif
 
-    call neobundle#begin(expand('~/.vim/bundle/'))
-    NeoBundleFetch 'Shougo/neobundle.vim'
-    call neobundle#end()
-    
-    " Let NeoBundle manage NeoBundle
-    NeoBundleFetch 'Shougo/neobundle.vim'
+"NeoBundleの設定をまとめろと言われたので修正
+call neobundle#begin(expand('~/.vim/bundle/'))
+  NeoBundleFetch 'Shougo/neobundle.vim'
+  " Recommended to install
+  NeoBundle 'Shougo/vimproc', {
+        \ 'build' : {
+        \     'windows' : 'make -f make_mingw32.mak',
+        \     'cygwin' : 'make -f make_cygwin.mak',
+        \     'mac' : 'make -f make_mac.mak',
+        \     'unix' : 'make -f make_unix.mak',
+        \    },
+        \ }
 
-    " Recommended to install
-    NeoBundle 'Shougo/vimproc', {
-          \ 'build' : {
-          \     'windows' : 'make -f make_mingw32.mak',
-          \     'cygwin' : 'make -f make_cygwin.mak',
-          \     'mac' : 'make -f make_mac.mak',
-          \     'unix' : 'make -f make_unix.mak',
-          \    },
-          \ }
+  " My Bundles here:
+  "
+  " Original repos on github
+  NeoBundle 'Shougo/vimshell'
+  NeoBundle 'terryma/vim-multiple-cursors.git'
+  NeoBundle 'tpope/vim-surround'
+  NeoBundle 'scrooloose/syntastic'
+  NeoBundle 'scrooloose/nerdtree'
+  NeoBundle 'Shougo/vimproc', {
+        \ 'build' : {
+        \     'windows' : 'make -f make_mingw32.mak',
+        \     'cygwin' : 'make -f make_cygwin.mak',
+        \     'mac' : 'make -f make_mac.mak',
+        \     'unix' : 'make -f make_unix.mak',
+        \    },
+        \ }
 
-    " My Bundles here:
-    "
-    " Original repos on github
-    NeoBundle 'Shougo/vimshell'
-    NeoBundle 'terryma/vim-multiple-cursors.git'
-    NeoBundle 'tpope/vim-surround'
-    NeoBundle 'scrooloose/syntastic'
-    NeoBundle 'scrooloose/nerdtree'
-    NeoBundle 'Shougo/neomru.vim'
-    NeoBundle 'MetalPhaeton/easybracket-vim'
-    NeoBundle 'w0ng/vim-hybrid'
-    NeoBundle 'chriskempson/vim-tomorrow-theme'
-    NeoBundle 'vim-ruby/vim-ruby'
-    NeoBundle 'nono/vim-handlebars'
+  " My Bundles here:
+  "
+  " Original repos on github
+  NeoBundle 'Shougo/vimshell'
+  NeoBundle 'terryma/vim-multiple-cursors.git'
+  NeoBundle 'tpope/vim-surround'
+  NeoBundle 'scrooloose/syntastic'
+  NeoBundle 'scrooloose/nerdtree'
+  NeoBundle 'Shougo/neomru.vim'
+  NeoBundle 'MetalPhaeton/easybracket-vim'
+  NeoBundle 'w0ng/vim-hybrid'
+  NeoBundle 'chriskempson/vim-tomorrow-theme'
+  NeoBundle 'vim-ruby/vim-ruby'
+  NeoBundle 'nono/vim-handlebars'
+  NeoBundle 'anekos/felis-cat-igirisu-toast-express'
+  NeoBundle 'tpope/vim-haml'
 
-    " Markdown syntax
-    NeoBundle "godlygeek/tabular"
-    NeoBundle "joker1007/vim-markdown-quote-syntax"
-    NeoBundle "rcmdnk/vim-markdown"
-    let g:vim_markdown_liquid=1
-    let g:vim_markdown_frontmatter=1
-    let g:vim_markdown_math=1
-    au BufRead,BufNewFile *.{txt,text} set filetype=markdown
+  "lightline(Underbar)
+  NeoBundle 'itchyny/lightline.vim'
+
+  "Python関連
+  NeoBundle 'kevinw/pyflakes-vim'
+  NeoBundle 'davidhalter/jedi-vim'
+
+  "nodejs周り
+  NeoBundle 'jelera/vim-javascript-syntax'
+  NeoBundle 'mattn/jscomplete-vim'
+  NeoBundle 'myhere/vim-nodejs-complete'
+
+  "Indentしたら線を表示したい
+  NeoBundle 'nathanaelkane/vim-indent-guides'
+
+  "Unite関連
+  NeoBundle 'Shougo/unite.vim'
+
+  "みんな大好きNeoComplecache
+  NeoBundle 'Shougo/neocomplcache'
+
+  "Neosnippet
+  NeoBundle 'Shougo/neosnippet'
+  "でさらにスニペットを増やす
+  NeoBundle 'honza/vim-snippets'
+
+  "vim-over
+  NeoBundle 'osyo-manga/vim-over'
+
+  "vim-shell
+  NeoBundle 'Shougo/vimshell'
+
+  "Writting for haskell
+  NeoBundle 'dag/vim2hs'
+  NeoBundle 'ujihisa/neco-ghc'
+  NeoBundle 'eagletmt/ghcmod-vim'
+  NeoBundle 'thinca/vim-quickrun'
+  NeoBundle 'kana/vim-filetype-haskell'
+
+  "php complete
+  NeoBundle 'violetyk/neocomplete-php.vim'
+
+  "slim syntax
+  NeoBundle "slim-template/vim-slim"
+
+  " Markdown syntax
+  NeoBundle "godlygeek/tabular"
+  NeoBundle "joker1007/vim-markdown-quote-syntax"
+  NeoBundle "rcmdnk/vim-markdown"
+
+  NeoBundle 'Shougo/neomru.vim'
+  NeoBundle 'MetalPhaeton/easybracket-vim'
+  NeoBundle 'w0ng/vim-hybrid'
+  NeoBundle 'chriskempson/vim-tomorrow-theme'
+  NeoBundle 'vim-ruby/vim-ruby'
+  NeoBundle 'nono/vim-handlebars'
+
+  " Markdown syntax
+  NeoBundle "godlygeek/tabular"
+  NeoBundle "joker1007/vim-markdown-quote-syntax"
+  NeoBundle "rcmdnk/vim-markdown"
+
+  "かっこいいコメントアウトしたい
+  NeoBundle 'tyru/caw.vim'
+
+  "後始末
+  NeoBundleCheck
+
+  call neobundle#end()
+
+"vim_markdownの設定
+let g:vim_markdown_liquid=1
+let g:vim_markdown_frontmatter=1
+let g:vim_markdown_math=1
+au BufRead,BufNewFile *.{txt,text} set filetype=markdown
 
     "fcitx fix
-    NeoBundle 'anekos/felis-cat-igirisu-toast-express'
-    "NeoBundle 'mattn/multi-vim'
     filetype plugin indent on     " Required!
-  
-    "haml syntax
-    NeoBundle 'tpope/vim-haml'
-    
-    "slim syntax
-    NeoBundle "slim-template/vim-slim"
+
+
     filetype plugin indent on
     " Enable slim syntax highlight
     autocmd FileType slim setlocal foldmethod=indent
     autocmd BufNewFile,BufRead *.slim set filetype=slim
   
-    "Writting for haskell
-    NeoBundle 'dag/vim2hs'
-    NeoBundle 'ujihisa/neco-ghc'
-    NeoBundle 'eagletmt/ghcmod-vim'
-    NeoBundle 'thinca/vim-quickrun'
-    NeoBundle 'kana/vim-filetype-haskell'
-
-    NeoBundle 'violetyk/neocomplete-php.vim'
     let g:neocomplete_php_locale = 'ja'
 
 "''''''''''''''''''lightline''''''''''''''''''''''
-NeoBundle 'itchyny/lightline.vim'
 set laststatus=2
 
 let g:lightline = {
@@ -206,18 +274,10 @@ nmap  <S-T> :GhcModTypeClear<CR>
 nmap  run :QuickRun<CR>
 
 "'''''''''''''''''''Python関連''''''''''''''''''''''''
-NeoBundle 'davidhalter/jedi-vim'
 "右にな，こういい感じにしたいよな
 let g:jedi#use_splits_not_buffers = "right"
 
-NeoBundle 'kevinw/pyflakes-vim'
-
-
 "''''''''''''''''node setting'''''''''''''''''''''''
-"Syntax highlight
-NeoBundle 'jelera/vim-javascript-syntax'
-NeoBundle 'mattn/jscomplete-vim'
-NeoBundle 'myhere/vim-nodejs-complete'
 
 "丸コピ
 autocmd FileType javascript setlocal omnifunc=nodejscomplete#CompleteJS
@@ -231,7 +291,6 @@ let g:node_usejscomplete = 1
 
 "''''''''''''''''Indent guide'''''''''''''''''''''''
 "Indentで線を引こうぜ
-NeoBundle 'nathanaelkane/vim-indent-guides'
 
 "vimが立ち上がったら，このプラグインを起動するべき
 let g:indent_guides_enable_on_vim_startup=1
@@ -265,8 +324,6 @@ imap <silent> <C-D> <Esc>:NERDTreeToggle<CR>
 cmap <silent> <C-D> <C-u>:NERDTreeToggle<CR>
 
 "'''''''''''''''Unite関連'''''''''''''''''
-"unite導入
-NeoBundle 'Shougo/unite.vim'
 "キーボードショートカットの設定
 "（<C-M>はCtrl+Mという意味）
 
@@ -291,14 +348,11 @@ au FileType unite nnoremap <silent> <buffer> <ESC><ESC> :q<CR>
 au FileType unite inoremap <silent> <buffer> <ESC><ESC> <ESC>:q<CR>
 
 "''''''''''コメントアウトしたい''''''''''''
-NeoBundle 'tyru/caw.vim'
 nmap <C-c> <Plug>(caw:I:toggle)
 vmap <C-c> <Plug>(caw:I:toggle)
 
 
 "''''''''''''neocomplcache関連'''''''''''''
-"neocomplcacheのインストール
-NeoBundle 'Shougo/neocomplcache'
 " いっくよー☆
 let g:neocomplcache_enable_at_startup = 1
 " 大文字が入力されるまで大文字小文字の区別をなくす
@@ -332,8 +386,6 @@ inoremap <expr><C-y> neocomplcache#close_popup()
 
 
 "''''''''''''''''''neosnippet関連''''''''''''''''''''
-"Neosnippetを導入
-NeoBundle 'Shougo/neosnippet'
 ""キーバインドを変更する
 "tabで下を見て，Shift+tabで上に戻る
 inoremap <expr><S-TAB>  pumvisible() ? "\<C-p>" : "\<S-TAB>"
@@ -344,7 +396,6 @@ imap <C-k> <Plug>(neosnippet_expand_or_jump)
 smap <C-k> <Plug>(neosnippet_expand_or_jump)
 
 "snippetを増やすドン
-NeoBundle 'honza/vim-snippets'
 let g:neosnippet#enable_snipmate_compatibility = 1
 let g:neosnippet#snippets_directory='~/.vim/bundle/vim-snippets/snippets,~/.vim/snippet'
 
@@ -357,17 +408,9 @@ let g:multi_cursor_skip_key='<C-x>'
 let g:multi_cursor_quit_key='<Esc>'
 let g:multi_cursor_start_key='<F6>'
 
-"''''''''''''vim-over'''''''''''''''''
-NeoBundle 'osyo-manga/vim-over'
-
-
 "'''''''''''''''vimshell関連'''''''''''''''''''''''''
-"vimshellを導入
-NeoBundle 'Shougo/vimshell'
 "キーバインド設定するよ
 nnoremap <silent> vs :VimShell<CR>
 nnoremap <silent> vsc :VimShellCreate<CR>
 nnoremap <silent> vp :VimShellPop %:p:h<CR>
 
-"'''''''''''''''''''''後始末''''''''''''''''''''''''
-NeoBundleCheck
