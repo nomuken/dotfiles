@@ -58,5 +58,7 @@ startupSetting = do
     spawn "alsactl restore"
     spawn "owncloud"
     spawn "xss-lock -- xscreensaver-command -lock &"
+    spawn "nm-applet"
     spawn "xautolock -time 1 -locker 'xscreensaver-command -lock' &"
+    spawn "insync start"
     setWMName "LG3D"
