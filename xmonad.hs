@@ -38,6 +38,7 @@ myLayout = (spacing 2 $ Grid False) ||| Full ||| (spacing 2 $ ResizableTall 1 (3
 
 -- MyShortcutKeys
 shortcutSetings = [("M1-l",spawn "xscreensaver-command -lock"),
+                  ("M1-c",spawn "chromium &"),
                   ("C-S-4",spawn "gnome-screenshot --area"),
                   ("M1-C-p",spawn "xrandr-out"),
                   ("M1-C-r",spawn "xrandr-in"),
@@ -56,7 +57,6 @@ startupSetting = do
     spawn "amixer set Master 0"
     spawn "pulseaudio --start"
     spawn "alsactl restore"
-    spawn "owncloud"
     spawn "xss-lock -- xscreensaver-command -lock &"
     spawn "nm-applet"
     spawn "xautolock -time 1 -locker 'xscreensaver-command -lock' &"
