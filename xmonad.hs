@@ -3,26 +3,20 @@ import XMonad.Util.Run
 import XMonad.Hooks.SetWMName
 import XMonad.Util.EZConfig
 import XMonad.Layout
-import XMonad.Layout.IM
-import XMonad.Layout.Named
-import XMonad.Layout.Tabbed
-import XMonad.Layout.Spacing
-import XMonad.Layout.HintedGrid
-import XMonad.Layout.Magnifier
-import XMonad.Layout.ResizableTile
-import XMonad.Layout.ThreeColumns
-import XMonad.Layout.DragPane
+import XMonad.Layout.OneBig
+import XMonad.Layout.Simplest
 import XMonad.Layout.ToggleLayouts
 import XMonad.Layout.NoBorders
+import XMonad.Layout.Spacing
 import XMonad.Hooks.ManageDocks
 
 -- XMonad Setup
 main = do
-    xmproc <- spawnPipe "xmobar"
+    wsbar <- spawnPipe "xmobar"
     xmonad $ defaultConfig{
                         terminal    = terminalSetting,
                         startupHook = startupSetting,
-                        layoutHook = toggleLayouts (noBorders Full) $ avoidStruts $ myLayout
+                        layoutHook = toggleLayouts (noBorders Simplest) $ avoidStruts $ smartSpacing 3 $ myLayout
                         }
                         `additionalKeysP`
                         shortcutSetings
@@ -34,11 +28,12 @@ main = do
                         ]
 
 -- leyout(Copy from internet)
-myLayout = (spacing 2 $ Grid False) ||| Full ||| (spacing 2 $ ResizableTall 1 (3/100) (1/2) []) ||| (spacing 2 $ ThreeColMid 2 (3/100) (1/2))
+myLayout = Tall 1 0.03 0.5 ||| Simplest
 
 -- MyShortcutKeys
 shortcutSetings = [("M1-l",spawn "xscreensaver-command -lock"),
                   ("M1-c",spawn "chromium &"),
+                  ("M1-m",spawn "mikutter &"),
                   ("C-S-4",spawn "gnome-screenshot --area"),
                   ("M1-C-p",spawn "xrandr-out"),
                   ("M1-C-r",spawn "xrandr-in"),

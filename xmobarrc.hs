@@ -1,17 +1,18 @@
 Config { 
 
 -- appearance
-font =         "xft:Bitstream Vera Sans Mono:size=9:bold:antialias=true"
+font =         "xft:Ricty:size=9:bold:antialias=true,Symbola:size=10:regular:antialias=true"
+-- font =         "xft:Bitstream Vera Sans Mono:size=9:bold:antialias=true"
 , bgColor =      "black"
-, fgColor =      "#646464"
+, fgColor =      "#B3B3B3"
 , position =     Top
-, border =       BottomB
+, border =       NoBorder
 , borderColor =  "#646464"
 
 -- layout
 , sepChar =  "%"   -- delineator between plugin names and straight text
 , alignSep = "}{"  -- separator between left-right alignment
-							 , template = "%battery% | %multicpu% | %coretemp% | %memory% | %dynnetwork% }{ %RJTT% | %date% || %kbd% "
+, template = " 🌠%uname%@%hostname% }{ %battery% %multicpu% %coretemp% %memory% %dynnetwork% || %date% "
 
 -- general behavior
 , lowerOnStart =     True    -- send to bottom of window stack on start
@@ -35,72 +36,64 @@ font =         "xft:Bitstream Vera Sans Mono:size=9:bold:antialias=true"
 --   The --template option controls how the plugin is displayed. Text
 --   color can be set by enclosing in <fc></fc> tags. For more details
 --   see http://projects.haskell.org/xmobar/#system-monitor-plugins.
-, commands = 
-
--- weather monitor
-[ Run Weather "RJTT" [ "--template", "<skyCondition> | <fc=#4682B4><tempC></fc>°C | <fc=#4682B4><rh></fc>% | <fc=#4682B4><pressure></fc>hPa"
-] 36000
-
+, commands = [
 -- network activity monitor (dynamic interface resolution)
-, Run DynNetwork     [ "--template" , "<dev>: <tx>kB/s|<rx>kB/s"
-										 , "--Low"      , "1000"       -- units: kB/s
-										 , "--High"     , "5000"       -- units: kB/s
-										 , "--low"      , "darkgreen"
-										 , "--normal"   , "darkorange"
-										 , "--high"     , "darkred"
-										 ] 10
+Run DynNetwork     [ "--template" , "⇅:⇧<tx>kB/s ⇩<rx>kB/s"
+                     , "--Low"      , "1000"       -- units: kB/s
+                     , "--High"     , "5000"       -- units: kB/s
+                     , "--low"      , "#079E05"
+                     , "--normal"   , "#F9AC00"
+                     , "--high"     , "red"
+                     ] 10
 
 -- cpu activity monitor
-, Run MultiCpu       [ "--template" , "Cpu: <total0>%|<total1>%"
-										 , "--Low"      , "50"         -- units: %
-										 , "--High"     , "85"         -- units: %
-										 , "--low"      , "darkgreen"
-										 , "--normal"   , "darkorange"
-										 , "--high"     , "darkred"
-										 ] 10
+, Run MultiCpu       [ "--template" , "🖥:<total>%"
+                     , "--Low"      , "50"         -- units: %
+                     , "--High"     , "85"         -- units: %
+                     , "--low"      , "#079E05"
+                     , "--normal"   , "#F9AC00"
+                     , "--high"     , "red"
+                     ] 10
 
 -- cpu core temperature monitor
-, Run CoreTemp       [ "--template" , "Temp: <core0>°C|<core1>°C"
-										 , "--Low"      , "70"        -- units: °C
-										 , "--High"     , "80"        -- units: °C
-										 , "--low"      , "darkgreen"
-										 , "--normal"   , "darkorange"
-										 , "--high"     , "darkred"
-										 ] 50
+, Run CoreTemp       [ "--template" , "🌡:<core0>℃"
+                     , "--Low"      , "70"        -- units: °C
+                     , "--High"     , "80"        -- units: °C
+                     , "--low"      , "#079E05"
+                     , "--normal"   , "#F9AC00"
+                     , "--high"     , "red"
+                     ] 50
 
 -- memory usage monitor
-, Run Memory         [ "--template" ,"Mem: <usedratio>%"
-										 , "--Low"      , "20"        -- units: %
-										 , "--High"     , "90"        -- units: %
-										 , "--low"      , "darkgreen"
-										 , "--normal"   , "darkorange"
-										 , "--high"     , "darkred"
-										 ] 10
+, Run Memory         [ "--template" ,"💾:<usedratio>%"
+                     , "--Low"      , "20"        -- units: %
+                     , "--High"     , "90"        -- units: %
+                     , "--low"      , "#079E05"
+                     , "--normal"   , "#F9AC00"
+                     , "--high"     , "red"
+                     ] 10
 
 -- battery monitor
-, Run Battery        [ "--template" , "Batt: <acstatus>"
-										 , "--Low"      , "10"        -- units: %
-										 , "--High"     , "80"        -- units: %
-										 , "--low"      , "darkred"
-										 , "--normal"   , "darkorange"
-										 , "--high"     , "darkgreen"
+, Run Battery        [ "--template" , "<acstatus>"
+                     , "--Low"      , "10"        -- units: %
+                     , "--High"     , "80"        -- units: %
+                     , "--low"      , "red"
+                     , "--normal"   , "#F9AC00"
+                     , "--high"     , "#079E05"
+                     , "--" -- battery specific options
+                     -- discharging status
+                     , "-o"  , "🔋:<left>% (<timeleft>)"
+                     -- AC "on" status
+                     , "-O"  , "<fc=#dAA520>⚡:<left>%</fc>"
+                     -- charged status
+                     , "-i"  , "<fc=#006000>😊:<left>%</fc>"
+                     ] 50
 
-, "--" -- battery specific options
--- discharging status
-, "-o"	, "<left>% (<timeleft>)"
--- AC "on" status
-, "-O"	, "<fc=#dAA520>Charging</fc>"
--- charged status
-, "-i"	, "<fc=#006000>Charged</fc>"
-] 50
+, Run Date           "<fc=#ABABAB>%Y/%m/%d(%a) %T</fc>" "date" 10
 
--- time and date indicator 
---   (%F = y-m-d date, %a = day of week, %T = h:m:s time)
-, Run Date           "<fc=#ABABAB>%F (%a) %T</fc>" "date" 10
 
 -- keyboard layout indicator
-, Run Kbd            [ ("us(dvorak)" , "<fc=#00008B>DV</fc>")
-										 , ("us"         , "<fc=#8B0000>US</fc>")
-										 ]
-										 ]
-										 }
+, Run Com "uname" ["-n"] "" 0
+, Run Com "hostname" ["-i"] "" 30
+                     ]
+}
