@@ -17,7 +17,7 @@ def autostart():
 keys = [
     Key(
         [mod, 'shift'], 'Return',
-        lazy.spawn("gnome-terminal &")
+        lazy.spawn("termite")
     ),
     Key(
         [mod], 'p',
