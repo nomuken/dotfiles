@@ -38,8 +38,9 @@ git clone --recursive https://github.com/sorin-ionescu/prezto.git ~/.zprezto
 
 rm -rf .zsh*
 
-for rcfile in "~/.zprezto/runcoms/^README.md(.N)"; do
-  ln -s "$rcfile" "~/.${rcfile:t}"
+setopt EXTENDED_GLOB
+for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
+  ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
 done
 
 echo "source $PWD/zshrc" >> ~/.zshrc
