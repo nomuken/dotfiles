@@ -2,7 +2,7 @@
 font = Ricty 10
 
 [colors]
-background = rgba(0, 0, 0, 0.8)
+background = rgba(0, 0, 0, 0.9)
 
 color0 = #000000
 color1 = #8a110e

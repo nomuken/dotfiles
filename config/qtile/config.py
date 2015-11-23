@@ -17,7 +17,7 @@ def autostart():
 keys = [
     Key(
         [mod, 'shift'], 'Return',
-        lazy.spawn("termite")
+        lazy.spawn("termite -e /bin/tmux")
     ),
     Key(
         [mod], 'p',
@@ -54,7 +54,6 @@ keys = [
 layouts = [
     layout.xmonad.MonadTall(),
     layout.Max(),
-    layout.matrix.Matrix(),
 ]
 
 
@@ -79,7 +78,7 @@ screens = [
             widget.CPUGraph(),
             widget.Systray(),
             widget.Clock(format='%Y-%m-%d %a %I:%M %p'),
-        ], 20)),
+        ], 18)),
 ]
 
 
