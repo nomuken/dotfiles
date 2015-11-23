@@ -19,6 +19,7 @@ ln -s `pwd`/xmonad.hs ~/.xmonad/xmonad.hs
 ln -s `pwd`/xmobarrc.hs ~/.xmobarrc
 
 echo "link to qtile confs"
+mkdir -p $DIR/.config
 ln -s $DIR/config/qtile ~/.config/
 
 echo "link to nvim confs"
@@ -36,9 +37,10 @@ curl http://sandbox.spica.bz/sh/installSshKey.sh | bash -
 echo "Install Prezto"
 git clone --recursive https://github.com/sorin-ionescu/prezto.git ~/.zprezto
 
-rm -rf .zsh*
-
 setopt EXTENDED_GLOB
+
+rm -rf ~/.zsh*
+
 for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
   ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
 done
