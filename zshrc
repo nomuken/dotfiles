@@ -8,9 +8,15 @@ export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=gasp'
 export PATH="$HOME/.pyenv/bin:$PATH"
 eval "$(pyenv init -)"
 
-alias vim='nvim'
+# fixed
 alias s='ls'
 alias ks='ls'
+
+# alias
+alias vim='nvim'
+
+# shortcuts
+alias 'cd-'='cd -'
 
 # git
 alias gc='git commit -a -m'
@@ -20,3 +26,6 @@ alias glog='git log --graph'
 alias gchk='git checkout'
 alias gchkb='git checkout -b'
 alias gb='git branch'
+alias gref='git reflog'
+
+alias gecld='git rm --cached'
