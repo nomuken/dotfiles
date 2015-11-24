@@ -19,7 +19,7 @@ ln -s `pwd`/xmonad.hs ~/.xmonad/xmonad.hs
 ln -s `pwd`/xmobarrc.hs ~/.xmobarrc
 
 echo "link to qtile confs"
-mkdir -p $DIR/.config
+mkdir -p ~/.config
 ln -s $DIR/config/qtile ~/.config/
 
 echo "link to nvim confs"
