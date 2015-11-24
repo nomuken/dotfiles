@@ -14,6 +14,8 @@ set nowritebackup
 "行番号
 set number
 
+colorscheme Tomorrow-Night
+
 "フォント
 set guifont=Ricty\ 12
 
