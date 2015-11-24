@@ -38,3 +38,5 @@ set showmatch matchtime=1
 nmap z :w<CR>
 nmap q :q<CR>
 nmap QQ :q!<CR>
+
+source ~/.config/nvim/plugins.vim
