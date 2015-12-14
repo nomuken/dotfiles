@@ -25,7 +25,7 @@ ln -s $DIR/config/qtile ~/.config/
 echo "link to nvim confs"
 ln -s $DIR/config/nvim ~/.config/
 
-echo "link to nvim confs"
+echo "link to termite confs"
 ln -s $DIR/config/termite ~/.config/
 
 echo "link to latexmk"
@@ -36,6 +36,9 @@ curl http://sandbox.spica.bz/sh/installSshKey.sh | bash -
 
 echo "Install Prezto"
 git clone --recursive https://github.com/sorin-ionescu/prezto.git ~/.zprezto
+
+echo "Install zsh highlites"
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.zprezto/zsh-syntax-highlighting
 
 setopt EXTENDED_GLOB
 

@@ -1,12 +1,19 @@
 bindkey "^[OA" history-beginning-search-backward
 bindkey "^[OB" history-beginning-search-forward
 
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/.zprezto/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 export PATH=$PATH:/home/nomuken/.gem/ruby/2.2.0/bin
 export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=gasp'
 
-export PATH="$HOME/.pyenv/bin:$PATH"
-eval "$(pyenv init -)"
+if [ -e "$HOME/.pyenv" ]; then
+  export PYENV_ROOT="$HOME/.pyenv"
+  export PATH="$PYENV_ROOT/bin:$PATH"
+  eval "$(pyenv init -)"
+  
+  if which pyenv-virtualenv-init > /dev/null; then
+     eval "$(pyenv virtualenv-init -)"
+   fi
+fi
 
 # fix typo
 alias s='ls'
