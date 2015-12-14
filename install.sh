@@ -40,6 +40,11 @@ git clone --recursive https://github.com/sorin-ionescu/prezto.git ~/.zprezto
 echo "Install zsh highlites"
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.zprezto/zsh-syntax-highlighting
 
+echo "Install pyenv and virtualenv"
+git clone https://github.com/yyuu/pyenv.git ~/.pyenv
+git clone https://github.com/yyuu/pyenv-virtualenv.git ~/.pyenv/plugins/pyenv-virtualenv
+
+
 setopt EXTENDED_GLOB
 
 rm -rf ~/.zsh*
