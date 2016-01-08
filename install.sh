@@ -18,6 +18,9 @@ echo "link to xmonad"
 ln -s `pwd`/xmonad.hs ~/.xmonad/xmonad.hs
 ln -s `pwd`/xmobarrc.hs ~/.xmobarrc
 
+echo 'link to tmux'
+ln -s `pwd`/tmux.conf ~/.tmux.conf
+
 echo "link to qtile confs"
 mkdir -p ~/.config
 ln -s $DIR/config/qtile ~/.config/

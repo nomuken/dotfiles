@@ -10,6 +10,8 @@ call neobundle#begin(expand('~/.config/nvim/bundle/'))
   NeoBundle 'Shougo/vinarise'
   " Indent guide
   NeoBundle 'nathanaelkane/vim-indent-guides'
+  " Support Dockerfile
+  NeoBundle 'ekalinin/Dockerfile.vim'
 
 
 call neobundle#end()
