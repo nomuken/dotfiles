@@ -12,7 +12,8 @@ call neobundle#begin(expand('~/.config/nvim/bundle/'))
   NeoBundle 'nathanaelkane/vim-indent-guides'
   " Support Dockerfile
   NeoBundle 'ekalinin/Dockerfile.vim'
-
+  " Support Go-lang
+  NeoBundle 'fatih/vim-go'
 
 call neobundle#end()
 filetype plugin indent on
