@@ -98,6 +98,7 @@ general_task() {
   install "my tmux.conf" "ln -s `pwd`/tmux.conf ~/.tmux.conf"
   install "Prezto" "git clone --recursive https://github.com/sorin-ionescu/prezto.git ~/.zprezto"
   install "zsh highliting" "git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.zprezto/zsh-syntax-highlighting"
+  setup "Setup Prezto" "_setup_prezto"
 }
 
 desktop_task() {

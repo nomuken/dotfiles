@@ -41,4 +41,7 @@ nmap z :w<CR>
 nmap q :q<CR>
 nmap QQ :q!<CR>
 
+"検索関連
+noremap <ESC><ESC> :noh<CR>
+
 source ~/.config/nvim/plugins.vim

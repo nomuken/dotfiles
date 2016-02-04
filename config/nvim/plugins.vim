@@ -6,6 +6,17 @@ call neobundle#begin(expand('~/.config/nvim/bundle/'))
   NeoBundle 'chriskempson/vim-tomorrow-theme'
   " Suggestion
   NeoBundle 'Shougo/deoplete.nvim'
+  " Unite
+  NeoBundle 'Shougo/unite.vim'
+  " support file_mru
+  NeoBundle 'Shougo/neomru.vim'
+  " support history/yank
+  NeoBundle 'Shougo/neoyank.vim'
+  " support git with unite
+  NeoBundle 'kmnk/vim-unite-giti.git'
+  " for inputting brakets
+  NeoBundle 'Townk/vim-autoclose'
+  NeoBundle 'kana/vim-smartinput'
   " Binary
   NeoBundle 'Shougo/vinarise'
   " Indent guide
@@ -14,6 +25,8 @@ call neobundle#begin(expand('~/.config/nvim/bundle/'))
   NeoBundle 'ekalinin/Dockerfile.vim'
   " Support Go-lang
   NeoBundle 'fatih/vim-go'
+  " Support Markdown
+  NeoBundle 'rhysd/nyaovim-markdown-preview'
 
 call neobundle#end()
 filetype plugin indent on
@@ -40,3 +53,18 @@ let g:indent_guides_guide_size = 1
 let g:indent_guides_auto_colors=0
 autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=#444433 ctermbg=black
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=#333344 ctermbg=darkgray
+
+" neocomplete settings
+inoremap <expr><tab> pumvisible() ? "\<down>" : "\<tab>"
+
+" setting brankets
+inoremap <C-s> <ESC>/<C-u>\v\)\|\}\|\]\|"\|'<CR>:noh<CR>a
+
+" Unite Configs...
+noremap mru :Unite file_mru<CR>
+noremap file :Unite file<CR>
+noremap yank :Unite history/yank<CR>
+noremap <C-g>l :Unite giti/log<CR>
+noremap <C-g>b :Unite giti/branch<CR>
+noremap <C-g>s :Unite giti/status<CR>
+
