@@ -87,10 +87,6 @@ if test "${TARGET}" = "" ;then
   exit 1
 fi
 
-#install "miku" "echo MikuMiku"
-#setup "echo miku" "echo MikuMiku"
-#exit 1
-
 general_task() {
   setup "Make .config dir" "mkdir -p ~/.config"
   install "NeoBundle" "git clone https://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim"
@@ -98,6 +94,7 @@ general_task() {
   install "my tmux.conf" "ln -s `pwd`/tmux.conf ~/.tmux.conf"
   install "Prezto" "git clone --recursive https://github.com/sorin-ionescu/prezto.git ~/.zprezto"
   install "zsh highliting" "git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.zprezto/zsh-syntax-highlighting"
+  install "Install my ssh key from github" "curl http://sandbox.spica.bz/sh/installSshKey.sh | bash -"
   setup "Setup Prezto" "_setup_prezto"
 }
 
@@ -105,12 +102,12 @@ desktop_task() {
   setup "Make xmonad dir" "mkdir ~/.xmonad"
   install "My Xmodmap" "ln -s ${DIR}/Xmodmap ~/.Xmodmap"
   install "My nvim confs" "ln -s ${DIR}/config/nvim ~/.config/"
+  install "NeoBundle" "git clone https://github.com/Shougo/neobundle.vim ~/.config/nvim/bundle/neobundle.vim"
   install "My xmonad.hs" "ln -s `pwd`/xmonad.hs ~/.xmonad/xmonad.hs"
   install "My xmobarrc" "ln -s `pwd`/xmobarrc.hs ~/.xmobarrc"
   install "My qtile confs" "ln -s ${DIR}/config/qtile ~/.config/"
   install "My termite confs" "ln -s ${DIR}/config/termite ~/.config/"
   install "My latexmkrc" "ln -s $DIR/latexmkrc ~/.latexmkrc"
-  install "My ssh key from github" "curl http://sandbox.spica.bz/sh/installSshKey.sh | bash -"
   install "pyenv" "git clone https://github.com/yyuu/pyenv.git ~/.pyenv"
   install "virtualenv" "git clone https://github.com/yyuu/pyenv-virtualenv.git ~/.pyenv/plugins/pyenv-virtualenv"
 }

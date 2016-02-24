@@ -15,7 +15,7 @@ call neobundle#begin(expand('~/.config/nvim/bundle/'))
   " support git with unite
   NeoBundle 'kmnk/vim-unite-giti.git'
   " for inputting brakets
-  NeoBundle 'Townk/vim-autoclose'
+  NeoBundle 'Raimondi/delimitMate'
   NeoBundle 'kana/vim-smartinput'
   " Binary
   NeoBundle 'Shougo/vinarise'
@@ -27,6 +27,8 @@ call neobundle#begin(expand('~/.config/nvim/bundle/'))
   NeoBundle 'fatih/vim-go'
   " Support Markdown
   NeoBundle 'rhysd/nyaovim-markdown-preview'
+  " easy comment out
+  NeoBundle "tyru/caw.vim.git"
 
 call neobundle#end()
 filetype plugin indent on
@@ -58,7 +60,7 @@ autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=#333344 ctermbg=darkgr
 inoremap <expr><tab> pumvisible() ? "\<down>" : "\<tab>"
 
 " setting brankets
-inoremap <C-s> <ESC>/<C-u>\v\)\|\}\|\]\|"\|'<CR>:noh<CR>a
+inoremap <C-s> <ESC>/<C-u>\v\)\|\}\|\]\|"\|'\|\><CR>:noh<CR>a
 
 " Unite Configs...
 noremap mru :Unite file_mru<CR>
@@ -68,3 +70,6 @@ noremap <C-g>l :Unite giti/log<CR>
 noremap <C-g>b :Unite giti/branch<CR>
 noremap <C-g>s :Unite giti/status<CR>
 
+" commentout
+nmap cc <Plug>(caw:I:toggle)
+vmap cc <Plug>(caw:I:toggle)
