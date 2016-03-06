@@ -1,38 +1,22 @@
-set runtimepath+=~/.config/nvim/bundle/neobundle.vim/
+let s:dein_dir = expand('~/.config/nvim/dein/packages')
+set runtimepath+=~/.config/nvim/dein/packages/dein.vim
 
-call neobundle#begin(expand('~/.config/nvim/bundle/'))
-  NeoBundleFetch 'Shougo/neobundle.vim'
-  " Color theme
-  NeoBundle 'chriskempson/vim-tomorrow-theme'
-  " Suggestion
-  NeoBundle 'Shougo/deoplete.nvim'
-  " Unite
-  NeoBundle 'Shougo/unite.vim'
-  " support file_mru
-  NeoBundle 'Shougo/neomru.vim'
-  " support history/yank
-  NeoBundle 'Shougo/neoyank.vim'
-  " support git with unite
-  NeoBundle 'kmnk/vim-unite-giti.git'
-  " for inputting brakets
-  NeoBundle 'Raimondi/delimitMate'
-  NeoBundle 'kana/vim-smartinput'
-  " Binary
-  NeoBundle 'Shougo/vinarise'
-  " Indent guide
-  NeoBundle 'nathanaelkane/vim-indent-guides'
-  " Support Dockerfile
-  NeoBundle 'ekalinin/Dockerfile.vim'
-  " Support Go-lang
-  NeoBundle 'fatih/vim-go'
-  " Support Markdown
-  NeoBundle 'rhysd/nyaovim-markdown-preview'
-  " easy comment out
-  NeoBundle "tyru/caw.vim.git"
+call dein#begin(s:dein_dir)
 
-call neobundle#end()
-filetype plugin indent on
-NeoBundleCheck
+let s:toml      = '~/.config/nvim/dein/plugins.toml'
+let s:lazy_toml      = '~/.config/nvim/dein/plugins_lazy.toml'
+
+if dein#load_cache([expand('<sfile>'), s:toml, s:lazy_toml])
+  call dein#load_toml(s:toml,      {'lazy': 0})
+  call dein#load_toml(s:lazy_toml, {'lazy': 1})
+  call dein#save_cache()
+endif
+
+call dein#end()
+
+if dein#check_install()
+  call dein#install()
+endif
 
 let g:deoplete#enable_at_startup = 1
 
