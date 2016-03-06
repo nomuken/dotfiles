@@ -1,23 +1,33 @@
+" set dein values
+"" plugins path
 let s:dein_dir = expand('~/.config/nvim/dein/packages')
-set runtimepath+=~/.config/nvim/dein/packages/dein.vim
+"" dein's dir
+let s:dein_repo_dir = '~/.config/nvim/dein/packages/dein.vim'
+"" package lists
+let s:toml = '~/.config/nvim/dein/plugins.toml'
+let s:lazy_toml = '~/.config/nvim/dein/plugins_lazy.toml'
+
+" set runtimepath(use dein)
+execute 'set runtimepath^=' . s:dein_repo_dir
 
 call dein#begin(s:dein_dir)
-
-let s:toml      = '~/.config/nvim/dein/plugins.toml'
-let s:lazy_toml      = '~/.config/nvim/dein/plugins_lazy.toml'
-
-if dein#load_cache([expand('<sfile>'), s:toml, s:lazy_toml])
-  call dein#load_toml(s:toml,      {'lazy': 0})
-  call dein#load_toml(s:lazy_toml, {'lazy': 1})
-  call dein#save_cache()
-endif
-
+  "" use cache
+  if dein#load_cache([expand('<sfile>'), s:toml, s:lazy_toml])
+    call dein#load_toml(s:toml, {'lazy': 0})
+    call dein#load_toml(s:lazy_toml, {'lazy': 1})
+    call dein#save_cache()
+  endif
+  
+  " use Syntax
+  syntax on
 call dein#end()
 
+" install 
 if dein#check_install()
   call dein#install()
 endif
 
+" dark power suggestion
 let g:deoplete#enable_at_startup = 1
 
 " auto run Vinarise if use -b option
@@ -40,7 +50,7 @@ let g:indent_guides_auto_colors=0
 autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=#444433 ctermbg=black
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=#333344 ctermbg=darkgray
 
-" neocomplete settings
+" deoplete settings
 inoremap <expr><tab> pumvisible() ? "\<down>" : "\<tab>"
 
 " setting brankets

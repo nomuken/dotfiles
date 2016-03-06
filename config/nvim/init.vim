@@ -1,3 +1,6 @@
+"ﾌﾟﾗｷﾞﾝをロードする
+source ~/.config/nvim/plugins.vim
+
 "俺はアンドゥし続けたい
 set undofile
 "作るのはいいんだけど，gitとの兼ね合いで邪魔になることが多いので.vim/undoフォルダに保存してくれ
@@ -44,4 +47,3 @@ nmap QQ :q!<CR>
 "検索関連
 noremap <ESC><ESC> :noh<CR>
 
-source ~/.config/nvim/plugins.vim
