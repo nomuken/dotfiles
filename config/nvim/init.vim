@@ -30,9 +30,6 @@ set softtabstop=2 "連続した空白に対してタブキーやバックスペ�
 set autoindent "改行時に前の行のインデントを継続する
 set smartindent "改行時に入力された行の末尾に合わせて次の行のインデントを増減する
 
-"''シンタックス系
-syntax on
-
 "タイトル
 set title
 

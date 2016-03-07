@@ -19,13 +19,14 @@ call dein#begin(s:dein_dir)
   endif
   
   " use Syntax
-  syntax on
 call dein#end()
 
 " install 
 if dein#check_install()
   call dein#install()
 endif
+
+syntax on
 
 " dark power suggestion
 let g:deoplete#enable_at_startup = 1
