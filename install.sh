@@ -101,7 +101,7 @@ general_task() {
 desktop_task() {
   setup "Make xmonad dir" "mkdir ~/.xmonad"
   install "My Xmodmap" "ln -s ${DIR}/Xmodmap ~/.Xmodmap"
-  install "My Xmodmap" "ln -s ${DIR}/Xresources ~/.Xresources"
+  install "My Xresources" "ln -s ${DIR}/Xresources ~/.Xresources"
   install "My nvim confs" "ln -s ${DIR}/config/nvim ~/.config/"
   install "dein.vim" "git clone https://github.com/Shougo/dein.vim ~/.config/nvim/dein/packages/dein.vim"
   install "My xmonad.hs" "ln -s `pwd`/xmonad.hs ~/.xmonad/xmonad.hs"
