@@ -1,0 +1,29 @@
+[[plugins]]
+  repo = 'chriskempson/vim-tomorrow-theme'
+
+[[plugins]]
+  repo = 'Shougo/deoplete.nvim'
+
+[[plugins]]
+  repo = 'Shougo/unite.vim'
+
+[[plugins]]
+  repo = 'Shougo/neomru.vim'
+
+[[plugins]]
+  repo = 'Shougo/neoyank.vim'
+
+[[plugins]]
+  repo = 'kmnk/vim-unite-giti.git'
+
+[[plugins]]
+  repo = 'Shougo/vinarise'
+
+[[plugins]]
+  repo = 'nathanaelkane/vim-indent-guides'
+
+[[plugins]]
+  repo = 'fatih/vim-go'
+
+[[plugins]]
+  repo = "tyru/caw.vim.git"

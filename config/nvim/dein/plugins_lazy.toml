@@ -1,0 +1,19 @@
+[[plugins]]
+  repo = 'Raimondi/delimitMate'
+  on_i = 1
+
+[[plugins]]
+  repo = 'kana/vim-smartinput'
+  on_i = 1
+
+[[plugins]]
+  repo = 'ekalinin/Dockerfile.vim'
+  on_ft = ['dockerfile']
+
+[[plugins]]
+  repo = 'mustache/vim-mustache-handlebars'
+  on_ft = ['handlebars']
+
+[[plugins]]
+  repo = 'wavded/vim-stylus'
+  on_ft = ['stylus']
