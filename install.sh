@@ -101,8 +101,9 @@ general_task() {
 desktop_task() {
   setup "Make xmonad dir" "mkdir ~/.xmonad"
   install "My Xmodmap" "ln -s ${DIR}/Xmodmap ~/.Xmodmap"
+  install "My Xmodmap" "ln -s ${DIR}/Xresources ~/.Xresources"
   install "My nvim confs" "ln -s ${DIR}/config/nvim ~/.config/"
-  install "NeoBundle" "git clone https://github.com/Shougo/neobundle.vim ~/.config/nvim/bundle/neobundle.vim"
+  install "dein.vim" "git clone https://github.com/Shougo/dein.vim ~/.config/nvim/dein/packages/dein.vim"
   install "My xmonad.hs" "ln -s `pwd`/xmonad.hs ~/.xmonad/xmonad.hs"
   install "My xmobarrc" "ln -s `pwd`/xmobarrc.hs ~/.xmobarrc"
   install "My qtile confs" "ln -s ${DIR}/config/qtile ~/.config/"
