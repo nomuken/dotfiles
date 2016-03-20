@@ -15,11 +15,11 @@ let s:lazy_toml = '~/.config/nvim/dein/plugins_lazy.toml'
 " set runtimepath(use dein)
 execute 'set runtimepath^=' . s:dein_repo_dir
 
-if dein#load_state(s:dein_cache_dir)
-  call dein#begin(s:dein_cache_dir)
-  call dein#load_toml(s:toml, {'lazy': 0})
-  call dein#load_toml(s:lazy_toml, {'lazy' : 1})
-endif
+call dein#load_state(s:dein_cache_dir)
+call dein#begin(s:dein_cache_dir)
+call dein#load_toml(s:toml, {'lazy': 0})
+call dein#load_toml(s:lazy_toml, {'lazy' : 1})
+
 
 call dein#end()
 call dein#save_state()
