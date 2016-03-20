@@ -1,4 +1,5 @@
 "ﾌﾟﾗｷﾞﾝをロードする
+source ~/.config/nvim/dein.vim
 source ~/.config/nvim/plugins.vim
 
 "俺はアンドゥし続けたい
