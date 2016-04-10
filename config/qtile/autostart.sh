@@ -9,4 +9,5 @@ xss-lock -- xscreensaver-command -lock &
 nm-applet &
 xautolock -time 1 -locker 'xscreensaver-command -lock' &
 insync start &
+xbindkeys
 # xcompmgr -c &
