@@ -38,7 +38,7 @@
 #keystate_scrolllock= enable
 
 # Examples of commands:
-"xvkbd  -text "\[Alt]w""
+"xvkbd  -text "\[Control]w""
   b:8
 
 #"xterm -geom 50x20+20+20"

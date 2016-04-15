@@ -2,15 +2,9 @@ bindkey "^[OA" history-beginning-search-backward
 bindkey "^[OB" history-beginning-search-forward
 
 source ~/.zprezto/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-export PATH=$PATH:/home/nomuken/.gem/ruby/2.2.0/bin
+export PATH=$PATH:/home/nomuken/.gem/ruby/2.2.0/bin:$HOME/.pyenv/bin
 export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=gasp'
-
-if [ -e "$HOME/.pyenv" ]; then
-  export PYENV_ROOT="$HOME/.pyenv"
-  export PATH="$PYENV_ROOT/bin:$PATH"
-  eval "$(pyenv init -)"
-  eval "$(pyenv virtualenv-init -)" 
-fi
+export PYENV_VIRTUALENV_DISABLE_PROMPT=1
 
 # fix typo
 alias s='ls'
@@ -35,3 +29,7 @@ alias gb='git branch'
 alias gref='git reflog'
 
 alias gecld='git rm --cached'
+
+# go confs
+export GOPATH=~/Develop/go
+export PATH="$PATH:$GOPATH/bin"
