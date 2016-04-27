@@ -48,6 +48,18 @@ keys = [
         [mod, "shift"], 'l',
         lazy.spawn("xscreensaver-command -lock")
     ),
+    Key(
+        [], "XF86AudioRaiseVolume",
+        lazy.spawn("sh -c \"pactl set-sink-mute 0 false ; pactl set-sink-volume 0 +5%\"")
+       ),
+    Key(
+        [], "XF86AudioLowerVolume",
+        lazy.spawn("sh -c \"pactl set-sink-mute 0 false ; pactl set-sink-volume 0 -5%\"")
+   ),
+    Key(
+        [], "XF86AudioMute",
+        lazy.spawn("pactl set-sink-mute 0 toggle")
+    )
 ]
 
 

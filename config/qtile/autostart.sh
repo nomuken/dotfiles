@@ -10,4 +10,4 @@ nm-applet &
 xautolock -time 1 -locker 'xscreensaver-command -lock' &
 insync start &
 xbindkeys
-# xcompmgr -c &
+pulseaudio --start
