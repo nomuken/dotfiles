@@ -50,15 +50,19 @@ keys = [
     ),
     Key(
         [], "XF86AudioRaiseVolume",
-        lazy.spawn("sh -c \"pactl set-sink-mute 0 false ; pactl set-sink-volume 0 +5%\"")
+        lazy.spawn("sh -c \"pactl set-sink-mute 0 false ; pactl set-sink-volume 0 +5% && aplay /opt/mikutter/core/skin/data/sounds/mikuxtu-se.wav\"")
        ),
     Key(
         [], "XF86AudioLowerVolume",
-        lazy.spawn("sh -c \"pactl set-sink-mute 0 false ; pactl set-sink-volume 0 -5%\"")
+        lazy.spawn("sh -c \"pactl set-sink-mute 0 false ; pactl set-sink-volume 0 -5% && aplay /opt/mikutter/core/skin/data/sounds/mikuxtu-se.wav \"")
    ),
     Key(
         [], "XF86AudioMute",
         lazy.spawn("pactl set-sink-mute 0 toggle")
+    ),
+    Key(
+        [], "XF86Launch1",
+        lazy.spawn("xautolock -disable")
     )
 ]
 
