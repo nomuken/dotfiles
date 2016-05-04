@@ -13,6 +13,7 @@ alias lks'ls'
 
 # alias
 alias vim='nvim'
+alias disas="objdump -M intel -S"
 
 # shortcuts
 alias 'cd-'='cd -'
@@ -33,3 +34,6 @@ alias gecld='git rm --cached'
 # go confs
 export GOPATH=~/Develop/go
 export PATH="$PATH:$GOPATH/bin"
+
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"

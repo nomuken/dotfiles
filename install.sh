@@ -111,7 +111,7 @@ desktop_task() {
   install "My latexmkrc" "ln -s ${DIR}/latexmkrc ~/.latexmkrc"
   install "pyenv" "git clone https://github.com/yyuu/pyenv.git ~/.pyenv"
   install "virtualenv" "git clone https://github.com/yyuu/pyenv-virtualenv.git ~/.pyenv/plugins/pyenv-virtualenv"
-  install "link to xbindkeys" "ln -s ${DIR}/xbindkeysrc .xbindkeysrc"
+  install "link to xbindkeys" "ln -s ${DIR}/xbindkeysrc ~/.xbindkeysrc"
 }
 
 server_task() {

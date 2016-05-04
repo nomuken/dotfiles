@@ -11,3 +11,4 @@ xautolock -time 1 -locker 'xscreensaver-command -lock' &
 insync start &
 xbindkeys
 pulseaudio --start
+fcitx
