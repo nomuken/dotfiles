@@ -16,8 +16,12 @@
 
 [[plugins]]
   repo = 'wavded/vim-stylus'
-  on_ft = ['stylus']
+  on_ft = ['vue', 'stylus']
 
 [[plugins]]
   repo = 'posva/vim-vue'
   on_ft = ['vue']
+
+[[plugins]]
+  repo = 'jelera/vim-javascript-syntax'
+  on_ft = ['vue', 'javascript']

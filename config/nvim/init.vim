@@ -1,11 +1,11 @@
 "ﾌﾟﾗｷﾞﾝをロードする
-source ~/.config/nvim/dein.vim
-source ~/.config/nvim/plugins.vim
+runtime! confs/basics/*.vim
+runtime! confs/plugins/*.vim
 
 "俺はアンドゥし続けたい
 set undofile
 "作るのはいいんだけど，gitとの兼ね合いで邪魔になることが多いので.vim/undoフォルダに保存してくれ
-set undodir=~/.vim/undo/
+set undodir=~/.cache/nvim/undo/
 
 "移動しちゃうぞい
 cd %:h
@@ -36,12 +36,4 @@ set title
 
 "時間でカッコ消えて欲しい．すごく．
 set showmatch matchtime=1
-
-"保存関連のキーマップする
-nmap z :w<CR>
-nmap q :q<CR>
-nmap QQ :q!<CR>
-
-"検索関連
-noremap <ESC><ESC> :noh<CR>
 
