@@ -112,6 +112,8 @@ desktop_task() {
   install "pyenv" "git clone https://github.com/yyuu/pyenv.git ~/.pyenv"
   install "virtualenv" "git clone https://github.com/yyuu/pyenv-virtualenv.git ~/.pyenv/plugins/pyenv-virtualenv"
   install "link to xbindkeys" "ln -s ${DIR}/xbindkeysrc ~/.xbindkeysrc"
+  setup "Make nyaovim dir" "mkdir ~/.config/nyaovim"
+  install "link to xbindkeys" "ln -s ${DIR}/config/nyaovim/nyaovimrc.html ~/.config/nyaovim/nyaovimrc.html"
 }
 
 server_task() {

@@ -12,7 +12,7 @@ alias ks='ls'
 alias lks'ls'
 
 # alias
-alias vim='nvim'
+alias vim='nyaovim'
 alias disas="objdump -M intel -S"
 
 # shortcuts

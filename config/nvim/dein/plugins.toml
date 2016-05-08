@@ -26,7 +26,10 @@
   repo = 'fatih/vim-go'
 
 [[plugins]]
-  repo = "tyru/caw.vim"
+  repo = 'tyru/caw.vim'
 
 [[plugins]]
-  repo = "itchyny/lightline.vim"
+  repo = 'itchyny/lightline.vim'
+
+[[plugins]]
+  repo = 'Shougo/vimfiler.vim'

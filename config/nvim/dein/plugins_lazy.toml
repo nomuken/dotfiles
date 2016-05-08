@@ -25,3 +25,7 @@
 [[plugins]]
   repo = 'jelera/vim-javascript-syntax'
   on_ft = ['vue', 'javascript']
+
+[[plugins]]
+  repo = 'cespare/vim-toml'
+  on_ft = ['toml']
