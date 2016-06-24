@@ -4,10 +4,10 @@ nmap q :q<CR>
 nmap QQ :q!<CR>
 
 " tab settings
-nmap <C-u>t :Unite tab<CR>
-nmap <C-t>n :tabnew<CR>
-nmap <C-t>t gt<CR>
-nmap <C-t>b gT<CR>
+nmap ut :Unite tab<CR>
+nmap tn :tabnew<CR>
+nmap tt gt<CR>
+nmap tb gT<CR>
 
 "検索関連
 noremap <ESC><ESC> :noh<CR>

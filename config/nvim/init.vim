@@ -1,6 +1,13 @@
+" 慣習
+filetype off
+filetype plugin indent off
+
 "ﾌﾟﾗｷﾞﾝをロードする
 runtime! confs/basics/*.vim
 runtime! confs/plugins/*.vim
+
+" python runtimes
+let g:python3_host_prog = '/bin/python'
 
 "俺はアンドゥし続けたい
 set undofile
@@ -37,3 +44,5 @@ set title
 "時間でカッコ消えて欲しい．すごく．
 set showmatch matchtime=1
 
+" start some detect
+filetype plugin indent on

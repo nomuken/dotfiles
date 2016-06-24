@@ -1,3 +1,6 @@
+" deoplete.nvim recommend
+set completeopt+=noselect
+
 " dark power suggestion
 let g:deoplete#enable_at_startup = 1
 call remote#host#RegisterPlugin('python3', '/home/nomuken/.cache/nvim/dein/.dein/rplugin/python3/deoplete', [
@@ -6,4 +9,3 @@ call remote#host#RegisterPlugin('python3', '/home/nomuken/.cache/nvim/dein/.dein
 
 " deoplete settings
 inoremap <expr><tab> pumvisible() ? "\<down>" : "\<tab>"
-
