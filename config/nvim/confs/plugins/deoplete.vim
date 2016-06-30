@@ -7,5 +7,8 @@ call remote#host#RegisterPlugin('python3', '/home/nomuken/.cache/nvim/dein/.dein
       \ {'sync': v:true, 'name': '_deoplete', 'type': 'function', 'opts': {}},
      \ ])
 
+" initialize input petterns
+let g:deoplete#omni#input_patterns = {}
+
 " deoplete settings
 inoremap <expr><tab> pumvisible() ? "\<down>" : "\<tab>"

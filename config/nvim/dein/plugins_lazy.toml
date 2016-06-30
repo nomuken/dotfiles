@@ -39,7 +39,6 @@
   build = 'make'
   on_ft = ['go']
 
-# [[plugins]]
-#   repo = 'nsf/gocode'
-#   rtp = 'nvim'
-#   on_ft = ['go']
+[[plugins]]
+  repo = 'OmniSharp/omnisharp-vim'
+  on_ft = ['cs', 'csi', 'csx']

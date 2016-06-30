@@ -33,3 +33,6 @@
 
 [[plugins]]
   repo = 'Shougo/vimfiler.vim'
+
+[[plugins]]
+  repo = 'tpope/vim-dispatch'
