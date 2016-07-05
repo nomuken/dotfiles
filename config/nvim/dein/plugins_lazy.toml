@@ -42,3 +42,7 @@
 [[plugins]]
   repo = 'OmniSharp/omnisharp-vim'
   on_ft = ['cs', 'csi', 'csx']
+
+[[plugins]]
+  repo = 'zchee/deoplete-clang'
+  on_ft = ['c', 'cpp']
