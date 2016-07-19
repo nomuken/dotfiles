@@ -17,7 +17,7 @@ def autostart():
 keys = [
     Key(
         [mod, 'shift'], 'Return',
-        lazy.spawn("termite -e /bin/tmux")
+        lazy.spawn("termite -e /usr/bin/tmux")
     ),
     Key(
         [mod], 'p',
@@ -50,11 +50,11 @@ keys = [
     ),
     Key(
         [], "XF86AudioRaiseVolume",
-        lazy.spawn("sh -c \"pactl set-sink-mute 0 false ; pactl set-sink-volume 0 +5% && aplay /opt/mikutter/core/skin/data/sounds/mikuxtu-se.wav\"")
+        lazy.spawn("sh -c \"pactl set-sink-mute 0 false ; pactl set-sink-volume 0 +5% && aplay /usr/share/mikutter/core/skin/data/sounds/mikuxtu-se.wav\"")
        ),
     Key(
         [], "XF86AudioLowerVolume",
-        lazy.spawn("sh -c \"pactl set-sink-mute 0 false ; pactl set-sink-volume 0 -5% && aplay /opt/mikutter/core/skin/data/sounds/mikuxtu-se.wav \"")
+        lazy.spawn("sh -c \"pactl set-sink-mute 0 false ; pactl set-sink-volume 0 -5% && aplay /usr/share/mikutter/core/skin/data/sounds/mikuxtu-se.wav \"")
    ),
     Key(
         [], "XF86AudioMute",
