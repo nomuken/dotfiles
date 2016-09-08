@@ -7,7 +7,7 @@ runtime! confs/basics/*.vim
 runtime! confs/plugins/*.vim
 
 " python runtimes
-let g:python3_host_prog = '/bin/python'
+let g:python3_host_prog = '/usr/bin/python'
 
 "俺はアンドゥし続けたい
 set undofile
