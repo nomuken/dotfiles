@@ -2,7 +2,8 @@ bindkey "^[OA" history-beginning-search-backward
 bindkey "^[OB" history-beginning-search-forward
 
 source ~/.zprezto/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-export PATH=$PATH:/home/nomuken/.gem/ruby/2.2.0/bin:$HOME/.pyenv/bin
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+export PATH=$PATH:/home/nomuken/.gem/ruby/2.3.0/bin:$HOME/.pyenv/bin
 export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=gasp'
 export PYENV_VIRTUALENV_DISABLE_PROMPT=1
 
@@ -12,7 +13,7 @@ alias ks='ls'
 alias lks'ls'
 
 # alias
-alias vim='nyaovim'
+alias vim='nvim'
 alias disas="objdump -M intel -S"
 
 # shortcuts
@@ -37,3 +38,6 @@ export PATH="$PATH:$GOPATH/bin"
 
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
+
+# ruby
+export GEM_HOME=$(ruby -e 'print Gem.user_dir')

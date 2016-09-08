@@ -46,3 +46,11 @@
 [[plugins]]
   repo = 'zchee/deoplete-clang'
   on_ft = ['c', 'cpp']
+
+[[plugins]]
+  repo = 'm2mdas/phpcomplete-extended'
+  on_ft = ['php']
+
+[[plugins]]
+  repo = 'dag/vim-fish'
+  on_ft = ['fish']
