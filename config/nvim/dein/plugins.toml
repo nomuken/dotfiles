@@ -5,6 +5,12 @@
   repo = 'Shougo/deoplete.nvim'
 
 [[plugins]]
+  repo = 'Shougo/neomru.vim'
+
+[[plugins]]
+  repo = 'Shougo/neoyank.vim'
+
+[[plugins]]
   repo = 'kmnk/vim-unite-giti.git'
 
 [[plugins]]
@@ -33,3 +39,6 @@
 
 [[plugins]]
   repo = 'Shougo/unite.vim'
+
+[[plugins]]
+  repo = 'scrooloose/syntastic'
