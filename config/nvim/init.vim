@@ -27,9 +27,6 @@ set number
 
 colorscheme Tomorrow-Night
 
-"フォント
-set guifont=Ricty\ 12
-
 "''インデント系
 set expandtab "改宗しました
 set tabstop=2 "画面上でタブ文字が占める幅

@@ -5,15 +5,6 @@
   repo = 'Shougo/deoplete.nvim'
 
 [[plugins]]
-  repo = 'Shougo/unite.vim'
-
-[[plugins]]
-  repo = 'Shougo/neomru.vim'
-
-[[plugins]]
-  repo = 'Shougo/neoyank.vim'
-
-[[plugins]]
   repo = 'kmnk/vim-unite-giti.git'
 
 [[plugins]]
@@ -36,3 +27,9 @@
 
 [[plugins]]
   repo = 'tpope/vim-dispatch'
+
+[[plugins]]
+  repo = 'Shougo/denite.nvim'
+
+[[plugins]]
+  repo = 'Shougo/unite.vim'

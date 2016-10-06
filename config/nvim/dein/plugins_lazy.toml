@@ -54,3 +54,7 @@
 [[plugins]]
   repo = 'dag/vim-fish'
   on_ft = ['fish']
+
+[[plugins]]
+  repo = 'zchee/deoplete-jedi'
+  on_ft = ['python']
