@@ -10,7 +10,8 @@ alias lks ls
 alias "cd-" "cd -"
 
 # shortcuts
-alias vim nyaovim
+alias vim nvim
+alias gvim nvim-qt
 alias disas "objdump -M intel -S"
 
 # git
