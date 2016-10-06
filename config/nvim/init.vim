@@ -4,7 +4,7 @@ filetype plugin indent off
 
 "ﾌﾟﾗｷﾞﾝをロードする
 runtime! confs/basics/*.vim
-runtime! confs/plugins/*.vim
+runtime! confs/always_plugins/*.vim
 
 " python runtimes
 let g:python3_host_prog = '/usr/bin/python'

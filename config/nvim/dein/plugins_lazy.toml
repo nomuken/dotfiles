@@ -33,23 +33,28 @@
 [[plugins]]
   repo = 'fatih/vim-go'
   on_ft = ['go']
+  source = '~/.config/nvim/confs/plugins/vim-go.vim'
 
 [[plugins]]
   repo = 'zchee/deoplete-go'
   build = 'make'
   on_ft = ['go']
+  source = '~/.config/nvim/confs/plugins/deoplete-go.vim'
 
 [[plugins]]
   repo = 'OmniSharp/omnisharp-vim'
   on_ft = ['cs', 'csi', 'csx']
+  source = '~/.config/nvim/confs/plugins/omnisharp-vim.vim'
 
 [[plugins]]
   repo = 'zchee/deoplete-clang'
   on_ft = ['c', 'cpp']
+  source = '~/.config/nvim/confs/plugins/deoplete-clang.vim'
 
 [[plugins]]
   repo = 'm2mdas/phpcomplete-extended'
   on_ft = ['php']
+  source = '~/.config/nvim/confs/plugins/phpcomplete-extended.vim'
 
 [[plugins]]
   repo = 'dag/vim-fish'
