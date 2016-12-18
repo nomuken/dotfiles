@@ -25,7 +25,7 @@ set nowritebackup
 "行番号
 set number
 
-colorscheme Tomorrow-Night
+colorscheme iceberg
 
 "''インデント系
 set expandtab "改宗しました

@@ -63,3 +63,15 @@
 [[plugins]]
   repo = 'zchee/deoplete-jedi'
   on_ft = ['python']
+
+[[plugins]]
+  repo = 'othree/yajs.vim'
+  on_ft = ['javascript']
+
+[[plugins]]
+  repo = 'nikvdp/ejs-syntax'
+  on_ft = ['ejs']
+
+[[plugins]]
+  repo = 'digitaltoad/vim-pug'
+  on_ft = ['pug']

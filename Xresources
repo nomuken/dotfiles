@@ -53,7 +53,7 @@ URxvt*color14:      #4eb4fa
 URxvt*color7:       #5f5f5f
 URxvt*color15:      #d0d0d0
 
-! rofi's color
+! rofi color
 rofi.color-enabled: true
 rofi.color-window: #273238, #273238, #1e2529
 rofi.color-normal: #273238, #c1c1c1, #273238, #394249, #ffffff
@@ -89,3 +89,6 @@ xscreensaver.passwd.thermometer.width:       8
 xscreensaver.dateFormat:    %I:%M%P %a %b %d, %Y
 xscreensaver.mode: blank
 xscreensaver.fade: false
+
+Xcursor.theme: Capitaine Cursors
+
