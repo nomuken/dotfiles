@@ -8,7 +8,7 @@
 
 [[plugins]]
   repo = 'ekalinin/Dockerfile.vim'
-  on_ft = ['dockerfile']
+  on_ft = ['docker-compose', 'dockerfile']
 
 [[plugins]]
   repo = 'mustache/vim-mustache-handlebars'
@@ -75,3 +75,7 @@
 [[plugins]]
   repo = 'digitaltoad/vim-pug'
   on_ft = ['pug']
+
+[[plugins]]
+  repo = 'lepture/vim-jinja'
+  on_ft = ['html', 'jinja', 'njk']

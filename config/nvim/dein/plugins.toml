@@ -1,5 +1,14 @@
 [[plugins]]
-  repo = 'chriskempson/vim-tomorrow-theme'
+  repo = 'Shougo/deol.nvim'
+
+[[plugins]]
+  repo = 'Shougo/neosnippet.vim'
+
+[[plugins]]
+  repo = 'Shougo/neosnippet-snippets'
+
+[[plugins]]
+  repo = 'honza/vim-snippets'
 
 [[plugins]]
   repo = 'cocopon/iceberg.vim'
