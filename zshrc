@@ -3,7 +3,7 @@ bindkey "^[OB" history-beginning-search-forward
 
 source ~/.zprezto/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-export PATH=$PATH:/home/nomuken/.gem/ruby/2.3.0/bin:$HOME/.pyenv/bin:$HOME/bin
+export PATH=$PATH:/home/nomuken/.gem/ruby/2.3.0/bin
 export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=gasp'
 export PYENV_VIRTUALENV_DISABLE_PROMPT=1
 
@@ -35,9 +35,3 @@ alias gecld='git rm --cached'
 # go confs
 export GOPATH=~/Develop/go
 export PATH="$PATH:$GOPATH/bin"
-
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
-
-# ruby
-export GEM_HOME=$(ruby -e 'print Gem.user_dir')

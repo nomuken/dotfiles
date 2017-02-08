@@ -109,8 +109,6 @@ desktop_task() {
   install "My qtile confs" "ln -s ${DIR}/config/qtile ~/.config/"
   install "My termite confs" "ln -s ${DIR}/config/termite ~/.config/"
   install "My latexmkrc" "ln -s ${DIR}/latexmkrc ~/.latexmkrc"
-  install "pyenv" "git clone https://github.com/yyuu/pyenv.git ~/.pyenv"
-  install "virtualenv" "git clone https://github.com/yyuu/pyenv-virtualenv.git ~/.pyenv/plugins/pyenv-virtualenv"
   install "link to xbindkeys" "ln -s ${DIR}/xbindkeysrc ~/.xbindkeysrc"
   setup "Make nyaovim dir" "mkdir ~/.config/nyaovim"
   install "link to xbindkeys" "ln -s ${DIR}/config/nyaovim/nyaovimrc.html ~/.config/nyaovim/nyaovimrc.html"
