@@ -1,7 +1,8 @@
 # pyenv
 # initialize
-. (pyenv init - | psub)
-. (pyenv virtualenv-init - | psub)
+status --is-interactive; and source (anyenv init -|psub)
+status --is-interactive; and source (pyenv init -|psub)
+status --is-interactive; and source (pyenv virtualenv-init -|psub)
 
 # typo
 alias s ls

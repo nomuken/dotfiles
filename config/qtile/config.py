@@ -94,13 +94,13 @@ screens = [
             widget.CPUGraph(),
             widget.Systray(),
             widget.Clock(format='%Y-%m-%d %a %I:%M %p'),
-        ], 18)),
+        ], 24)),
 ]
 
 
 widget_defaults = dict(
     font='Koruri',
-    fontsize=13,
+    fontsize=18,
     padding=0,
 )
 

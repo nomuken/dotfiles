@@ -5,6 +5,7 @@ SET PYENV_VIRTUALENV_DISABLE_PROMPT:1
 SET _JAVA_OPTIONS:\x2dDawt\x2euseSystemAAFontSettings\x3dgasp
 SET __fish_classic_git_prompt_initialized:\x1d
 SET __fish_init_1_50_0:\x1d
+SET __fish_init_2_39_8:\x1d
 SET __fish_init_2_3_0:\x1d
 SET fish_color_autosuggestion:969896
 SET fish_color_command:b294bb
@@ -27,10 +28,11 @@ SET fish_color_selection:\x2d\x2dbackground\x3dpurple
 SET fish_color_status:red
 SET fish_color_user:green
 SET fish_color_valid_path:\x2d\x2dunderline
+SET fish_greeting:\x1d
 SET fish_key_bindings:fish_default_key_bindings
 SET fish_pager_color_completion:normal
 SET fish_pager_color_description:555\x1eyellow
 SET fish_pager_color_prefix:cyan
 SET fish_pager_color_progress:cyan
 SET fish_user_abbreviations:hoge\x20ls
-SET fish_user_paths:/home/nomuken/\x2epyenv/bin\x1e/home/nomuken/\x2epyenv/bin\x1e/home/nomuken/Develop/go/bin
+SET fish_user_paths:/home/nomuken/\x2eanyenv/bin\x1e/home/nomuken/Develop/go/bin

@@ -1,5 +1,5 @@
 [options]
-font = Ricty 10
+font = Ricty 14
 
 [colors]
 background = rgba(0, 0, 0, 0.9)

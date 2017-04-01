@@ -1,1 +1,1 @@
-Guifont Ricty:h10
+Guifont Hack:h14
