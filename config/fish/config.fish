@@ -27,3 +27,7 @@ alias gchb "git checkout -b"
 alias gb "git branch"
 alias gref "git reflog"
 alias grm "git rm --cached"
+
+# go
+set -gx GOPATH $HOME/Develop/go
+set -gx PATH  $PATH $GOPATH/bin
