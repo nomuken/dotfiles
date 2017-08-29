@@ -25,7 +25,8 @@ set nowritebackup
 "行番号
 set number
 
-colorscheme iceberg
+set background=dark
+colorscheme hybrid
 
 "''インデント系
 set expandtab "改宗しました

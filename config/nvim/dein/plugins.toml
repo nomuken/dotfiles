@@ -11,7 +11,7 @@
   repo = 'honza/vim-snippets'
 
 [[plugins]]
-  repo = 'cocopon/iceberg.vim'
+  repo = 'w0ng/vim-hybrid'
 
 [[plugins]]
   repo = 'Shougo/deoplete.nvim'
