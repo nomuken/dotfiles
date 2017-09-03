@@ -11,3 +11,4 @@ insync start &
 xbindkeys
 pulseaudio --start
 fcitx
+xcompmgr &
