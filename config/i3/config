@@ -87,3 +87,5 @@ exec --no-startup-id insync start
 exec --no-startup-id xcompmgr
 exec --no-startup-id xautolock -time 3 -locker "sh -c 'i3lock -c 000000 && sleep 0.1 && xset dpms force off'"
 exec --no-startup-id pasystray
+exec --no-startup-id blueman-applet
+exec --no-startup-id google-musicmanager
