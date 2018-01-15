@@ -42,5 +42,10 @@ set title
 "時間でカッコ消えて欲しい．すごく．
 set showmatch matchtime=1
 
+"カーソル行を強調表示してほしい
+set cursorline
+set cursorcolumn
+hi CursorLineNr term=bold   cterm=NONE ctermfg=228 ctermbg=NONE
+
 " start some detect
 filetype plugin indent on
