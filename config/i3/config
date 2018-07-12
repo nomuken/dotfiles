@@ -16,8 +16,8 @@ bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
 bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
 
 # brightness
-bindsym XF86MonBrightnessDown exec xbacklight -dec 1 
-bindsym XF86MonBrightnessUp exec xbacklight -inc 1
+bindsym XF86MonBrightnessDown exec light -U 1 
+bindsym XF86MonBrightnessUp exec light -A 1
 
 
 ### launch
@@ -89,8 +89,8 @@ exec --no-startup-id pulseaudio --start
 exec --no-startup-id nm-applet
 exec --no-startup-id fcitx
 exec --no-startup-id insync start
-exec --no-startup-id xcompmgr
-exec --no-startup-id xautolock -time 3 -locker "sh -c 'i3lock -c 000000 && sleep 0.1 && xset dpms force off'"
+exec --no-startup-id compton -b -c
+exec --no-startup-id xautolock -time 3 -locker "sh -c 'i3lock -c 000000'"
 exec --no-startup-id pasystray
 exec --no-startup-id blueman-applet
 exec --no-startup-id google-musicmanager
