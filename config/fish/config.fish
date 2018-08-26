@@ -31,3 +31,4 @@ alias grm "git rm --cached"
 # go
 set -gx GOPATH $HOME/Develop/go
 set -gx PATH  $PATH $GOPATH/bin
+set -gx PATH  $PATH (yarn global bin)

@@ -4,7 +4,6 @@ nmap q :q<CR>
 nmap QQ :q!<CR>
 
 " tab settings
-nmap ut :Unite tab<CR>
 nmap tn :tabnew<CR>
 nmap tt gt<CR>
 nmap tb gT<CR>

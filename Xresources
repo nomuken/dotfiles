@@ -80,7 +80,7 @@ xscreensaver.Dialog.Button.background:  #000000
 xscreensaver.Dialog.text.foreground:    #666666
 xscreensaver.Dialog.text.background:    #ffffff
 xscreensaver.Dialog.internalBorderWidth:24
- xscreensaver.Dialog.borderWidth:        0
+xscreensaver.Dialog.borderWidth:        0
 xscreensaver.Dialog.shadowThickness:    2
 !timeout bar (background is actually determined by Dialog.text.background)
 xscreensaver.passwd.thermometer.foreground:  #D81E05
@@ -91,6 +91,7 @@ xscreensaver.dateFormat:    %I:%M%P %a %b %d, %Y
 xscreensaver.mode: blank
 xscreensaver.fade: false
 
+Xcursor.size: 8
 ! Xft.dpi: 120
 ! Xft.autohint: 0
 ! Xft.lcdfilter:  lcddefault
