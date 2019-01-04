@@ -91,7 +91,7 @@ xscreensaver.dateFormat:    %I:%M%P %a %b %d, %Y
 xscreensaver.mode: blank
 xscreensaver.fade: false
 
-Xcursor.size: 8
+Xcursor.size: 32
 ! Xft.dpi: 120
 ! Xft.autohint: 0
 ! Xft.lcdfilter:  lcddefault
