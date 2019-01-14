@@ -64,3 +64,7 @@
 [[plugins]]
   repo = 'lepture/vim-jinja'
   on_ft = ['html', 'jinja', 'njk']
+
+[[plugins]]
+  repo = 'vim-latex/vim-latex'
+  on_ft = ['tex']

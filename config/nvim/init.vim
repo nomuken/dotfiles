@@ -19,7 +19,7 @@ cd %:h
 
 "'''''''''''''''システム系'''''''''''''''''''
 "俺はシステムとクリップボードと共有したいぞ
-set clipboard+=unnamed
+set clipboard+=unnamedplus
 "バックアップは本体を保存したら消去  
 set nowritebackup
 "行番号
