@@ -24,8 +24,8 @@ alias gstatus='git status'
 alias ga='git add .'
 alias gp='git push'
 alias glog='git log --graph'
-alias gchk='git checkout'
-alias gchkb='git checkout -b'
+alias gch='git checkout'
+alias gchb='git checkout -b'
 alias gb='git branch'
 alias gref='git reflog'
 
@@ -34,3 +34,9 @@ alias gecld='git rm --cached'
 # go confs
 export GOPATH=~/Develop/go
 export PATH="$PATH:$GOPATH/bin"
+
+# anyenv
+export PATH="$HOME/.anyenv/bin:$PATH"
+eval "$(anyenv init - zsh)"
+eval "$(pyenv init - zsh)"
+eval "$(pyenv virtualenv-init - zsh)"
