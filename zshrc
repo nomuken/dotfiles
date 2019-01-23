@@ -38,5 +38,5 @@ export PATH="$PATH:$GOPATH/bin"
 # anyenv
 export PATH="$HOME/.anyenv/bin:$PATH"
 eval "$(anyenv init - zsh)"
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
+eval "$(pyenv init - zsh)"
+eval "$(pyenv virtualenv-init - zsh)"
