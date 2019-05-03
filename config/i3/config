@@ -23,7 +23,7 @@ bindsym XF86MonBrightnessUp exec light -A 1
 ### launch
 bindsym $mod+Shift+Return exec /bin/termite -e /bin/tmux
 bindsym $mod+s exec xset s off -dpms
-bindsym $mod+Ctrl+l exec sh -c "i3lock -c 000000 && sleep 0.1 && xset dpms force off"
+bindsym $mod+Ctrl+l exec sh -c "i3lock -c 000000"
 bindsym $mod+p exec rofi -show run -font "snap 10" -fg "#505050" -bg "#000000" -hlfg "#ffb964" -hlbg "#000000" -o 85
 
 
