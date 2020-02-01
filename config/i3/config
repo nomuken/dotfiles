@@ -84,11 +84,12 @@ bar {
   tray_output primary
 }
 
-exec --no-startup-id nitrogen --restore
-exec --no-startup-id pulseaudio --start
+exec --no-startup-id sh -c "pulseaudio -k && sleep 5 && pulseaudio --start"
 exec --no-startup-id nm-applet
 exec --no-startup-id fcitx
-exec --no-startup-id xautolock -time 3 -locker "sh -c 'i3lock -c 000000'"
+exec --no-startup-id picom -b
 exec --no-startup-id pasystray
 exec --no-startup-id blueman-applet
 exec --no-startup-id google-musicmanager
+exec --no-startup-id xset -dpms
+exec --no-startup-id sh -c "sleep 3 && /home/nomuken/.screenlayout/default.sh && nitrogen --restore"
