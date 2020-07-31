@@ -25,6 +25,9 @@ bindsym $mod+Shift+Return exec /bin/termite -e /bin/tmux
 bindsym $mod+s exec xset s off -dpms
 bindsym $mod+Ctrl+l exec sh -c "i3lock -c 000000"
 bindsym $mod+p exec rofi -show run -font "snap 10" -fg "#505050" -bg "#000000" -hlfg "#ffb964" -hlbg "#000000" -o 85
+bindsym $mod+c exec google-chrome-stable
+bindsym $mod+v exec /bin/termite -e /bin/tmux
+bindsym $mod+r exec /usr/bin/nomuken-restart-background-applications
 
 
 ### window
@@ -58,6 +61,9 @@ bindsym $mod+Shift+l move right
 
 ### layout
 bindsym $mod+f fullscreen
+bindsym $mod+Shift+s layout stacking
+bindsym $mod+Shift+t layout tabbed
+bindsym $mod+Shift+d layout default
 
 
 ### workspace
@@ -87,9 +93,9 @@ bar {
 exec --no-startup-id sh -c "pulseaudio -k && sleep 5 && pulseaudio --start"
 exec --no-startup-id nm-applet
 exec --no-startup-id fcitx
-exec --no-startup-id picom -b
 exec --no-startup-id pasystray
 exec --no-startup-id blueman-applet
-exec --no-startup-id google-musicmanager
-exec --no-startup-id xset -dpms
-exec --no-startup-id sh -c "sleep 3 && /home/nomuken/.screenlayout/default.sh && nitrogen --restore"
+exec --no-startup-id picom -b
+exec --no-startup-id sh -c "sleep 1 && /home/nomuken/.screenlayout/default.sh && sleep 1 && nitrogen --restore"
+exec --no-startup-id sh -c "sleep 2 && insync start"
+

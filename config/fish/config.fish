@@ -5,9 +5,10 @@ status --is-interactive; and source (pyenv init -|psub)
 status --is-interactive; and source (pyenv virtualenv-init -|psub)
 
 # typo
-alias s ls
-alias ks ls
-alias lks ls
+alias s exa
+alias ks exa
+alias lks exa
+alias ls exa
 alias "cd-" "cd -"
 
 # shortcuts
