@@ -1,0 +1,50 @@
+[[plugins]]
+  repo = 'Shougo/dein.vim'
+
+[[plugins]]
+  repo = 'sheerun/vim-polyglot'
+
+[[plugins]]
+  repo = 'kaicataldo/material.vim'
+  hook_add = '''
+    let g:material_theme_style = 'ocean'
+    colorscheme material
+  '''
+
+[[plugins]]
+  repo = 'tpope/vim-surround'
+  on_event = 'InsertEnter'
+
+[[plugins]]
+  repo = 'airblade/vim-gitgutter'
+
+[[plugins]]
+  repo = 'prabirshrestha/vim-lsp'
+  depends = ['deoplete.nvim']
+
+[[plugins]]
+  repo = 'mattn/vim-lsp-settings'
+  depends = ['vim-lsp']
+
+[[plugins]]
+  repo = 'Shougo/deoplete.nvim'
+  on_event = 'InsertEnter'
+  hook_add = '''
+  let g:deoplete#enable_at_startup = 1
+  set completeopt+=noinsert
+
+  inoremap <silent><expr> <TAB>
+    \ pumvisible() ? "\<C-n>" :
+    \ <SID>check_back_space() ? "\<TAB>" :
+    \ deoplete#manual_complete()
+  function! s:check_back_space() abort
+    let col = col('.') - 1
+    return !col || getline('.')[col - 1]  =~ '\s'
+  endfunction
+  inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+  inoremap <expr><C-e> deoplete#cancel_popup()
+  '''
+
+[[plugins]]
+  repo = 'lighttiger2505/deoplete-vim-lsp'
+  depends = ['vim-lsp', 'deoplete.nvim']
