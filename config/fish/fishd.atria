@@ -34,4 +34,4 @@ SET fish_pager_color_description:555\x1eyellow
 SET fish_pager_color_prefix:cyan
 SET fish_pager_color_progress:cyan
 SET fish_user_abbreviations:\x1d
-SET fish_user_paths:/home/nomuken/\x2eanyenv/bin\x1e/home/nomuken/Develop/go/bin
+SET fish_user_paths:/home/nomuken/Develop/go/bin

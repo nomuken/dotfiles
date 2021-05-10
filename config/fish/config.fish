@@ -1,8 +1,11 @@
-# pyenv
-# initialize
-status --is-interactive; and source (anyenv init -|psub)
-status --is-interactive; and source (pyenv init -|psub)
-status --is-interactive; and source (pyenv virtualenv-init -|psub)
+# hello asdf
+if test -f /opt/asdf-vm/asdf.fish
+  source /opt/asdf-vm/asdf.fish
+end
+
+if type direnv > /dev/null 2>&1
+  direnv hook fish | source
+end
 
 # typo
 alias s exa

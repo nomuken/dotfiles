@@ -23,6 +23,10 @@
   depends = ['deoplete.nvim']
 
 [[plugins]]
+  repo = 'mattn/vim-lsp-icons'
+  depends = ['vim-lsp']
+
+[[plugins]]
   repo = 'mattn/vim-lsp-settings'
   depends = ['vim-lsp']
 

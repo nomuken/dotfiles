@@ -90,7 +90,6 @@ bar {
   tray_output primary
 }
 
-exec --no-startup-id sh -c "pulseaudio -k && sleep 5 && pulseaudio --start"
 exec --no-startup-id nm-applet
 exec --no-startup-id fcitx
 exec --no-startup-id pasystray
