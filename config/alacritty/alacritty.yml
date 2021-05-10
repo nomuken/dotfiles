@@ -6,28 +6,21 @@ shell:
     - "tmux attach || tmux"
 env:
   TERM: alacritty
-colors: # Nord color scheme
+colors: # material ocean
   primary:
-    background: '#2E3440'
-    foreground: '#D8DEE9'
+    background: '0x0f111a'
+    foreground: '0xD8DEE9'
+  cursor:
+    cursor: '0xff4151'
   normal:
-    black:   '#3B4252'
-    red:     '#BF616A'
-    green:   '#A3BE8C'
-    yellow:  '#EBCB8B'
-    blue:    '#81A1C1'
-    magenta: '#B48EAD'
-    cyan:    '#88C0D0'
-    white:   '#E5E9F0'
-  bright:
-    black:   '#4C566A'
-    red:     '#BF616A'
-    green:   '#A3BE8C'
-    yellow:  '#EBCB8B'
-    blue:    '#81A1C1'
-    magenta: '#B48EAD'
-    cyan:    '#8FBCBB'
-    white:   '#ECEFF4'
+    black:      '0x4C566A'
+    red:        '0xBF616A'
+    green:      '0xA3BE8C'
+    yellow:     '0xEBCB8B'
+    blue:       '0x81A1C1'
+    magenta:    '0xB48EAD'
+    cyan:       '0x88C0D0'
+    white:      '0xE5E9F0'
 font:
   size: 14
   normal:
@@ -42,4 +35,6 @@ font:
   bold_italic:
     family: 'Hack'
     style: Bold Italic
-background_opacity: 0.9
+window:
+  decorations: none
+background_opacity: 0.95
