@@ -8,10 +8,10 @@ if type direnv > /dev/null 2>&1
 end
 
 # typo
-alias s exa
-alias ks exa
-alias lks exa
-alias ls exa
+alias s lsd
+alias ks lsd
+alias lks lsd
+alias ls lsd
 alias "cd-" "cd -"
 
 # shortcuts
