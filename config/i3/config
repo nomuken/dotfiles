@@ -97,4 +97,3 @@ exec --no-startup-id blueman-applet
 exec --no-startup-id picom -b
 exec --no-startup-id sh -c "sleep 1 && /home/nomuken/.screenlayout/default.sh && sleep 1 && nitrogen --restore"
 exec --no-startup-id sh -c "sleep 2 && insync start"
-
