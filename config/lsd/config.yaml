@@ -1,0 +1,9 @@
+classic: false
+color:
+  when: auto
+date: '+%Y/%m/%d %T'
+icons:
+  theme: fancy
+  when: auto
+recursion:
+  enabled: false

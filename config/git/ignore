@@ -281,3 +281,13 @@ override.tf.json
 # example: *tfplan*
 
 
+### https://raw.github.com/github/gitignore/7ab549fcae8269fdd4004065470176f829d88200/Global/VisualStudioCode.gitignore
+
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
+
+
