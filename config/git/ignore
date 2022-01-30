@@ -291,3 +291,4 @@ override.tf.json
 *.code-workspace
 
 
+.tool-versions

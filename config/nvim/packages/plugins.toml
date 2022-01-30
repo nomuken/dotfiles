@@ -19,6 +19,9 @@
   repo = 'airblade/vim-gitgutter'
 
 [[plugins]]
+  repo = 'earthly/earthly.vim'
+
+[[plugins]]
   repo = 'prabirshrestha/vim-lsp'
   depends = ['deoplete.nvim']
 
