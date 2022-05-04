@@ -1,6 +1,19 @@
+# hello brew
+set PATH /opt/homebrew/bin $PATH
+
+# for macOS
+set PATH $HOME/bin $PATH
+
+set fish_greeting
+
+# google cloud sdk
+if test -f /opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.fish.inc
+  source /opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.fish.inc
+end
+
 # hello asdf
-if test -f /opt/asdf-vm/asdf.fish
-  source /opt/asdf-vm/asdf.fish
+if test -f /opt/homebrew/opt/asdf/asdf.fish
+  source /opt/homebrew/opt/asdf/asdf.fish
 end
 
 if type direnv > /dev/null 2>&1
@@ -36,6 +49,4 @@ alias grm "git rm --cached"
 set -gx GOPATH $HOME/Develop/go
 set -gx PATH  $PATH $GOPATH/bin
 set -gx GO111MODULE on
-
-set -gx PATH  $PATH (yarn global bin)
 

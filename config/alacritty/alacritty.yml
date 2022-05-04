@@ -1,5 +1,5 @@
 shell:
-  program: /usr/bin/fish
+  program: /opt/homebrew/bin/fish
   args:
     - --login
     - --command
