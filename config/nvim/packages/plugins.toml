@@ -55,3 +55,6 @@
 [[plugins]]
   repo = 'lighttiger2505/deoplete-vim-lsp'
   depends = ['vim-lsp', 'deoplete.nvim']
+
+[[plugins]]
+  repo = 'github/copilot.vim'
