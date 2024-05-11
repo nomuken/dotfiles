@@ -1,0 +1,46 @@
+[colors.cursor]
+cursor = "0xff4151"
+
+[colors.normal]
+black = "0x4C566A"
+blue = "0x81A1C1"
+cyan = "0x88C0D0"
+green = "0xA3BE8C"
+magenta = "0xB48EAD"
+red = "0xBF616A"
+white = "0xE5E9F0"
+yellow = "0xEBCB8B"
+
+[colors.primary]
+background = "0x0f111a"
+foreground = "0xD8DEE9"
+
+[env]
+TERM = "alacritty"
+
+[font]
+size = 14
+
+[font.bold]
+family = "HackGen35 Console NF"
+style = "Bold"
+
+[font.bold_italic]
+family = "HackGen35 Console NF"
+style = "Bold Italic"
+
+[font.italic]
+family = "HackGen35 Console NF"
+style = "Italic"
+
+[font.normal]
+family = "HackGen35 Console NF"
+style = "Regular"
+
+[shell]
+args = ["--login", "--command", "tmux attach || tmux"]
+program = "/opt/homebrew/bin/fish"
+
+[window]
+decorations = "none"
+opacity = 0.95
