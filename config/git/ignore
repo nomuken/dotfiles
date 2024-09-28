@@ -220,7 +220,6 @@ celerybeat.pid
 
 # Environments
 .envrc
-.env
 .venv
 env/
 venv/
@@ -289,6 +288,3 @@ override.tf.json
 !.vscode/launch.json
 !.vscode/extensions.json
 *.code-workspace
-
-
-.tool-versions
