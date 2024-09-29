@@ -22,16 +22,6 @@ set cursorline
 set cursorcolumn
 hi CursorLineNr term=bold   cterm=NONE ctermfg=228 ctermbg=NONE
 
-nmap z :w<CR>
-nmap q :q<CR>
-nmap QQ :q!<CR>
-
-nmap tn :tabnew<CR>
-nmap tt gt<CR>
-nmap tb gT<CR>
-
-noremap <ESC><ESC> :noh<CR>
-
 if (has('nvim'))
   let $NVIM_TUI_ENABLE_TRUE_COLOR = 1
 endif
@@ -39,3 +29,6 @@ endif
 if (has('termguicolors'))
   set termguicolors
 endif
+
+runtime keymap.vim
+runtime dpp.vim
