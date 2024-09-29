@@ -1,0 +1,11 @@
+- hosts: macos
+  roles:
+    - packages
+    - alacritty
+    - fish
+    - git
+    - i3
+    - lsd
+    - neovim
+    - tmux
+    - yabai

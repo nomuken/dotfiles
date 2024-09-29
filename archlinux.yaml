@@ -1,0 +1,9 @@
+- hosts: archlinux
+  roles:
+    - alacritty
+    - fish
+    - git
+    - i3
+    - lsd
+    - neovim
+    - tmux

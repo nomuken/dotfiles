@@ -1,0 +1,94 @@
+- name: "install neovim for macOS"
+  community.general.homebrew:
+    name: neovim
+    state: present
+  when: ansible_os_family == 'Darwin'
+- name: "install deps for macOS"
+  community.general.homebrew:
+    name:
+      - deno
+      - git
+    state: latest
+  when: ansible_os_family == 'Darwin'
+- name: "install neovim for Ubuntu"
+  ansible.builtin.apt:
+    name: neovim
+    state: present
+  when: ansible_os_family == 'Debian'
+- name: "install deps for Ubuntu"
+  ansible.builtin.apt:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - curl
+    - unzip
+    - git
+  when: ansible_os_family == 'Debian'
+- name: "install deno via script for Ubuntu"
+  ansible.builtin.shell:
+    cmd: "curl -fsSL https://deno.land/x/install/install.sh | sh"
+  when: ansible_os_family == 'Debian'
+- name: "which deno for Ubuntu"
+  ansible.builtin.shell:
+    cmd: "which deno"
+  register: deno_path
+  when: ansible_os_family == 'Debian'
+- name: "upgrade deno if exists for Ubuntu"
+  ansible.builtin.shell:
+    cmd: "deno upgrade"
+  when: ansible_os_family == 'Debian' and deno_path.stdout != ''
+- name: "install deno and deps for Archlinux"
+  community.general.pacman:
+    name:
+      - deno
+      - git
+    state: latest
+  when: ansible_os_family == 'Archlinux'
+- name: "create cache folder"
+  ansible.builtin.file:
+    path: "{{ home_dir }}/.cache/nvim"
+    state: directory
+    recurse: yes
+    mode: "0755"
+- name: "install dpp.vim"
+  ansible.builtin.git:
+    repo: "https://github.com/Shougo/dpp.vim.git"
+    dest: "{{ home_dir }}/.cache/nvim/dpp.vim"
+    force: yes
+    update: yes
+- name: "install ddp-ext-installer"
+  ansible.builtin.git:
+    repo: "https://github.com/Shougo/dpp-ext-installer"
+    dest: "{{ home_dir }}/.cache/nvim/dpp-ext-installer"
+    force: yes
+    update: yes
+- name: "install dpp-protocol-git"
+  ansible.builtin.git:
+    repo: "https://github.com/Shougo/dpp-protocol-git"
+    dest: "{{ home_dir }}/.cache/nvim/dpp-protocol-git"
+    force: yes
+    update: yes
+- name: "install dpp-ext-lazy"
+  ansible.builtin.git:
+    repo: "https://github.com/Shougo/dpp-ext-lazy"
+    dest: "{{ home_dir }}/.cache/nvim/dpp-ext-lazy"
+    force: yes
+    update: yes
+- name: "install dpp-ext-toml"
+  ansible.builtin.git:
+    repo: "https://github.com/Shougo/dpp-ext-toml"
+    dest: "{{ home_dir }}/.cache/nvim/dpp-ext-toml"
+    force: yes
+    update: yes
+- name: "install vim-denops"
+  ansible.builtin.git:
+    repo: "https://github.com/vim-denops/denops.vim"
+    dest: "{{ home_dir }}/.cache/nvim/vim-denops.vim"
+    force: yes
+    update: yes
+- name: "create symlink to nvim config"
+  ansible.builtin.file:
+    src: "{{ git_dir }}/dotfiles/config/nvim"
+    dest: "{{ home_dir }}/.config/nvim"
+    state: link
+    force: yes

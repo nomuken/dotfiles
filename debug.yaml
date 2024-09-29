@@ -1,0 +1,41 @@
+- hosts: localhost
+  gather_facts: yes
+
+  tasks:
+    - name: vars
+      debug:
+        var: vars
+
+    - name: debug lookup("env", "PWD")
+      debug:
+        var: lookup("env", "PWD")
+
+    - name: debug ansible_env.PWD
+      debug:
+        var: ansible_env.PWD
+
+    - name: debug ansible_env
+      debug:
+        var: ansible_env
+
+    - name: git_root_path
+      debug:
+        var: git_dir
+
+    - name: test
+      debug:
+        var: "{{ git_dir }}/palloc"
+
+    - name: home_dir
+      debug:
+        var: home_dir
+    - name: test
+      debug:
+        var: "{{ home_dir }}/palloc"
+
+    - name: target_user
+      debug:
+        var: target_user
+    - name: test
+      debug:
+        var: "{{ target_user }}/palloc"

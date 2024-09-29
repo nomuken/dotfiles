@@ -1,0 +1,21 @@
+- name: "install yabai and skhd"
+  community.general.homebrew:
+    name:
+      - koekeishiya/formulae/yabai
+      - koekeishiya/formulae/skhd
+    state: latest
+  when: ansible_os_family == 'Darwin'
+- name: "create symlink to yabairc"
+  ansible.builtin.file:
+    src: "{{ git_dir }}/dotfiles/yabairc"
+    dest: "{{ home_dir }}/.yabairc"
+    state: link
+    force: yes
+  when: ansible_os_family == 'Darwin'
+- name: "create symlink to skhdrc"
+  ansible.builtin.file:
+    src: "{{ git_dir }}/dotfiles/skhdrc"
+    dest: "{{ home_dir }}/.skhdrc"
+    state: link
+    force: yes
+  when: ansible_os_family == 'Darwin'

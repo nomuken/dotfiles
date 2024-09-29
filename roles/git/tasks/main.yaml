@@ -1,0 +1,21 @@
+- name: "install git for macOS"
+  community.general.homebrew:
+    name: git
+    state: latest
+  when: ansible_os_family == 'Darwin'
+- name: "install git for Ubuntu"
+  ansible.builtin.apt:
+    name: git
+    state: latest
+  when: ansible_os_family == 'Debian'
+- name: "install git for Archlinux"
+  community.general.pacman:
+    name: git
+    state: latest
+  when: ansible_os_family == 'Archlinux'
+- name: "create symlink to git config"
+  ansible.builtin.file:
+    src: "{{ git_dir }}/dotfiles/config/git"
+    dest: "{{ home_dir }}/.config/git"
+    state: link
+    force: yes

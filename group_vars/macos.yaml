@@ -1,0 +1,27 @@
+packages:
+  - ansible
+  - bash
+  - xz
+  - asdf
+  - bat
+  - coreutils
+  - sqlite
+  - direnv
+  - wget
+  - 1password-cli
+  - burp-suite
+  - parallels
+  - scroll-reverser
+  - vlc
+  - zed
+  - docker
+  - google-drive
+  - protonvpn
+  - stats
+  - vmware-fusion
+  - bartender
+  - ferdium
+  - notchnook
+  - raycast
+  - visual-studio-code
+  - yubico-authenticator

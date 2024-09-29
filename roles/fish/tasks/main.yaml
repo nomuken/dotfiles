@@ -1,0 +1,21 @@
+- name: "install fish for macOS"
+  community.general.homebrew:
+    name: fish
+    state: latest
+  when: ansible_os_family == 'Darwin'
+- name: "install fish for Ubuntu"
+  ansible.builtin.apt:
+    name: fish
+    state: latest
+  when: ansible_os_family == 'Debian'
+- name: "install fish for Archlinux"
+  community.general.pacman:
+    name: fish
+    state: latest
+  when: ansible_os_family == 'Archlinux'
+- name: "create symlink to fish config"
+  ansible.builtin.file:
+    src: "{{ git_dir }}/dotfiles/config/fish"
+    dest: "{{ home_dir }}/.config/fish"
+    state: link
+    force: yes

@@ -1,0 +1,21 @@
+- name: "install lsd for macOS"
+  community.general.homebrew:
+    name: lsd
+    state: present
+  when: ansible_os_family == 'Darwin'
+- name: "install lsd for ubuntu"
+  ansible.builtin.apt:
+    name: lsd
+    state: present
+  when: ansible_os_family == 'Debian'
+- name: "install lsd for Archlinux"
+  community.general.pacman:
+    name: lsd
+    state: latest
+  when: ansible_os_family == 'Archlinux'
+- name: "create symlink to lsd config"
+  ansible.builtin.file:
+    src: "{{ git_dir }}/dotfiles/config/lsd"
+    dest: "{{ home_dir }}/.config/lsd"
+    state: link
+    force: yes

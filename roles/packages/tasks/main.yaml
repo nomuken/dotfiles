@@ -1,0 +1,6 @@
+- name: "install generic packages"
+  community.general.homebrew:
+    name: "{{ item }}"
+    state: latest
+  with_items: "{{ packages }}"
+  when: ansible_os_family == 'Darwin'

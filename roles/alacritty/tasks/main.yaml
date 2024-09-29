@@ -1,0 +1,72 @@
+- name: "install alacritty for macOS"
+  community.general.homebrew:
+    name: alacritty
+    state: present
+  when: ansible_os_family == 'Darwin'
+- name: "which rust"
+  ansible.builtin.shell:
+    cmd: "which rust"
+  register: rust_path
+  when: ansible_os_family == 'Debian'
+- name: "install alacritty deps for Ubuntu"
+  ansible.builtin.apt:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - cmake
+    - pkg-config
+    - libfreetype6-dev
+    - libfontconfig1-dev
+    - libxcb-xfixes0-dev
+    - python3
+    - libxkbcommon-dev
+  when: ansible_os_family == 'Debian' and rust_path.stdout == ''
+- name: "install rust and cargo for Ubuntu"
+  ansible.builtin.shell:
+    cmd: "curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y"
+  when: ansible_os_family == 'Debian' and rust_path.stdout == ''
+- name: "upgrade rust and cargo"
+  ansible.builtin.shell:
+    cmd: "rustup update"
+  when: ansible_os_family == 'Debian'
+- name: "install alacritty for Ubuntu"
+  ansible.builtin.shell:
+    cmd: "cargo install alacritty"
+  when: ansible_os_family == 'Debian'
+- name: "install alacritty for Archlinux"
+  community.general.pacman:
+    name: alacritty
+    state: latest
+  when: ansible_os_family == 'Archlinux'
+- name: "install HackGen font for macOS"
+  community.general.homebrew:
+    name: font-hackgen-nerd
+    state: present
+  when: ansible_os_family == 'Darwin'
+- name: "install HackGen font for Archlinux"
+  community.general.pacman:
+    executable: yay
+    name: ttf-hackgen
+    state: latest
+  when: ansible_os_family == 'Archlinux'
+- name: "Download HackGen font for Ubuntu"
+  ansible.builtin.get_url:
+    url: https://github.com/yuru7/HackGen/releases/download/v2.9.0/HackGen_NF_v2.9.0.zip
+    dest: /tmp/HackGen_NF_v2.9.0.zip
+  when: ansible_os_family == 'Debian'
+- name: "Unzip HackGen font for Ubuntu"
+  ansible.builtin.unarchive:
+    src: /tmp/HackGen_NF_v2.9.0.zip
+    dest: /tmp/HackGen_NF_v2.9.0
+    remote_src: yes
+  when: ansible_os_family == 'Debian'
+- name: "Install HackGen font for Ubuntu"
+  ansible.builtin.shell:
+    cmd: "sudo cp /tmp/HackGen_NF_v2.9.0/*.ttf /usr/share/fonts/ && sudo fc-cache -f -v"
+  when: ansible_os_family == 'Debian'
+- name: "create symlink to alacritty config"
+  ansible.builtin.file:
+    src: "{{ git_dir }}/dotfiles/config/alacritty"
+    dest: "{{ home_dir }}/.config/alacritty"
+    state: link
+    force: yes

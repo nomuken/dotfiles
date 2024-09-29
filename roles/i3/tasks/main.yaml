@@ -1,0 +1,26 @@
+- name: "install i3 for Ubuntu"
+  ansible.builtin.apt:
+    name:
+      - i3
+      - i3-status
+    state: latest
+  when: ansible_os_family == 'Debian'
+- name: "install i3 for Archlinux"
+  community.general.pacman:
+    name:
+      - i3-wm
+      - i3status
+    state: latest
+  when: ansible_os_family == 'Archlinux'
+- name: "create symlink to i3 config"
+  ansible.builtin.file:
+    src: "{{ git_dir }}/dotfiles/config/i3"
+    dest: "{{ home_dir }}/.config/i3"
+    state: link
+    force: yes
+- name: "create symlink to i3status config"
+  ansible.builtin.file:
+    src: "{{ git_dir }}/dotfiles/config/i3status"
+    dest: "{{ home_dir }}/.config/i3status"
+    state: link
+    force: yes

@@ -1,0 +1,29 @@
+- name: "install tmux for Ubuntu"
+  ansible.builtin.apt:
+    name: tmux
+    state: latest
+  when: ansible_os_family == 'Debian'
+- name: "install tmux for Archlinux"
+  community.general.pacman:
+    name: tmux
+    state: latest
+  when: ansible_os_family == 'Archlinux'
+- name: "install tmux for macOS"
+  community.general.homebrew:
+    name: tmux
+    state: latest
+  when: ansible_os_family == 'Darwin'
+- name: "create symlink to tmux config for macOS"
+  ansible.builtin.file:
+    src: "{{ git_dir }}/dotfiles/tmux.mac.conf"
+    dest: "{{ home_dir }}/.tmux.conf"
+    state: link
+    force: yes
+  when: ansible_os_family == 'Darwin'
+- name: "create symlink to tmux config for Linux"
+  ansible.builtin.file:
+    src: "{{ git_dir }}/dotfiles/tmux.linux.conf"
+    dest: "{{ home_dir }}/.tmux.conf"
+    state: link
+    force: yes
+  when: not ansible_os_family == 'Darwin'

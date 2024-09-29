@@ -1,0 +1,3 @@
+home_dir: "{{ lookup('env', 'HOME') }}"
+git_dir: "{{ lookup('env', 'GIT_ROOT_PATH') }}"
+target_user: "{{ lookup('env', 'USER') }}"
