@@ -37,10 +37,12 @@ style = "Italic"
 family = "HackGen35 Console NF"
 style = "Regular"
 
-[shell]
+[terminal.shell]
 args = ["--login", "--command", "tmux attach || tmux"]
 program = "/opt/homebrew/bin/fish"
 
 [window]
 decorations = "none"
 opacity = 0.95
+
+[terminal]
