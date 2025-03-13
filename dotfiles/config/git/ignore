@@ -219,7 +219,7 @@ celerybeat.pid
 *.sage.py
 
 # Environments
-.envrc
+.mise.toml
 .venv
 env/
 venv/

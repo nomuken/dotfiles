@@ -11,11 +11,6 @@ if test -f /opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.
   source /opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.fish.inc
 end
 
-# hello asdf
-if test -f /opt/homebrew/opt/asdf/libexec/asdf.fish
-  source /opt/homebrew/opt/asdf/libexec/asdf.fish
-end
-
 if type direnv > /dev/null 2>&1
   direnv hook fish | source
 end
