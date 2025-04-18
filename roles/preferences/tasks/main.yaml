@@ -96,3 +96,17 @@
     key: TrackpadTwoFingerDoubleTapGesture
     type: boolean
     value: true
+- name: Set keyrepeat rate to fast
+  community.general.osx_defaults:
+    domain: NSGlobalDomain
+    host: currentHost
+    key: KeyRepeat
+    type: int
+    value: 1
+- name: Set initial keyrepeat delay to short
+  community.general.osx_defaults:
+    domain: NSGlobalDomain
+    host: currentHost
+    key: InitialKeyRepeat
+    type: int
+    value: 10
