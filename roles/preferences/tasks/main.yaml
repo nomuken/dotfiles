@@ -82,3 +82,17 @@
     key: TrackpadThreeFingerDrag
     type: boolean
     value: true
+- name: Enable trackpad tap to click
+  community.general.osx_defaults:
+    domain: com.apple.AppleMultitouchTrackpad
+    host: currentHost
+    key: Clicking
+    type: boolean
+    value: true
+- name: Enable trackpad tap to click with two fingers for right click
+  community.general.osx_defaults:
+    domain: com.apple.AppleMultitouchTrackpad
+    host: currentHost
+    key: TrackpadTwoFingerDoubleTapGesture
+    type: boolean
+    value: true
