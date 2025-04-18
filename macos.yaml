@@ -1,4 +1,5 @@
 - hosts: macos
+  become: true
   roles:
     - packages
     - alacritty

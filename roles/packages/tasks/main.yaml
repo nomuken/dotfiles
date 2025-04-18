@@ -4,3 +4,9 @@
     state: latest
   with_items: "{{ packages }}"
   when: ansible_os_family == 'Darwin'
+- name: "install AppStore packages"
+  community.general.mas:
+    id: "{{ item }}"
+    state: present
+  with_items: "{{ mas_apps }}"
+  when: ansible_os_family == 'Darwin'
