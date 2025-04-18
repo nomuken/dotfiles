@@ -1,12 +1,9 @@
 packages:
   - ansible
-  - bash
   - xz
-  - asdf
   - bat
   - coreutils
   - sqlite
-  - direnv
   - wget
   - 1password-cli
   - burp-suite
@@ -18,10 +15,18 @@ packages:
   - google-drive
   - protonvpn
   - stats
-  - vmware-fusion
   - bartender
   - ferdium
   - notchnook
   - raycast
   - visual-studio-code
   - yubico-authenticator
+  - mise
+  - firefox
+  - font-hack-nerd-font
+  - font-hackgen-nerd
+  - gimp
+  - google-drive
+  - nmap
+  - ldns
+  - atok

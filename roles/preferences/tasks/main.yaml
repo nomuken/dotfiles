@@ -1,0 +1,84 @@
+- name: Set language to English and Japanese
+  community.general.osx_defaults:
+    key: AppleLanguages
+    type: array
+    value:
+      - ja
+      - en
+- name: Set enable to authentication when wakeup
+  community.general.osx_defaults:
+    domain: com.apple.screensaver
+    host: currentHost
+    key: askForPassword
+    type: boolean
+    value: true
+- name: Set time to ask for password
+  community.general.osx_defaults:
+    domain: com.apple.screensaver
+    host: currentHost
+    key: askForPasswordDelay
+    type: int
+    value: 0
+- name: Set dock icon size to 36
+  community.general.osx_defaults:
+    domain: com.apple.dock
+    host: currentHost
+    key: tilesize
+    type: int
+    value: 36
+- name: Set dock autohide
+  community.general.osx_defaults:
+    domain: com.apple.dock
+    host: currentHost
+    key: autohide
+    type: boolean
+    value: true
+- name: Don't show recent applications
+  community.general.osx_defaults:
+    domain: com.apple.dock
+    host: currentHost
+    key: show-recents
+    type: boolean
+    value: false
+- name: Set dock animation to scale
+  community.general.osx_defaults:
+    domain: com.apple.dock
+    host: currentHost
+    key: mineffect
+    type: string
+    value: scale
+- name: Disable screenshots shadow
+  community.general.osx_defaults:
+    domain: com.apple.screencapture
+    host: currentHost
+    key: disable-shadow
+    type: boolean
+    value: true
+- name: Show file path in Finder
+  community.general.osx_defaults:
+    domain: com.apple.finder
+    host: currentHost
+    key: ShowPathbar
+    type: boolean
+    value: true
+- name: Don't alert when changing file extension
+  community.general.osx_defaults:
+    domain: com.apple.finder
+    host: currentHost
+    key: FXEnableExtensionChangeWarning
+    type: boolean
+    value: false
+- name: Set to flashing date separator
+  community.general.osx_defaults:
+    domain: com.apple.menuextra.clock
+    host: currentHost
+    key: FlashDateSeparators
+    type: boolean
+    value: true
+- name: Use three finger for drag
+  community.general.osx_defaults:
+    domain: com.apple.AppleMultitouchTrackpad
+    host: currentHost
+    key: TrackpadThreeFingerDrag
+    type: boolean
+    value: true
