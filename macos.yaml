@@ -1,6 +1,4 @@
 - hosts: macos
-  become: yes
-  become_method: sudo
   roles:
     - packages
     - alacritty
