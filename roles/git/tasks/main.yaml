@@ -13,6 +13,11 @@
     name: git
     state: latest
   when: ansible_os_family == 'Archlinux'
+- name: "create .config directory"
+  ansible.builtin.file:
+    path: "{{ home_dir }}/.config"
+    state: directory
+    mode: '0755'
 - name: "create symlink to git config"
   ansible.builtin.file:
     src: "{{ git_dir }}/dotfiles/config/git"

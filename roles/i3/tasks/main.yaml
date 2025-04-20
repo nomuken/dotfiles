@@ -18,6 +18,11 @@
     dest: "{{ home_dir }}/.config/i3"
     state: link
     force: yes
+- name: "create .config directory"
+  ansible.builtin.file:
+    path: "{{ home_dir }}/.config"
+    state: directory
+    mode: '0755'
 - name: "create symlink to i3status config"
   ansible.builtin.file:
     src: "{{ git_dir }}/dotfiles/config/i3status"

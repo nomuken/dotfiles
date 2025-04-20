@@ -64,6 +64,11 @@
   ansible.builtin.shell:
     cmd: "sudo cp /tmp/HackGen_NF_v2.9.0/*.ttf /usr/share/fonts/ && sudo fc-cache -f -v"
   when: ansible_os_family == 'Debian'
+- name: "create .config directory"
+  ansible.builtin.file:
+    path: "{{ home_dir }}/.config"
+    state: directory
+    mode: '0755'
 - name: "create symlink to alacritty config"
   ansible.builtin.file:
     src: "{{ git_dir }}/dotfiles/config/alacritty"
