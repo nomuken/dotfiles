@@ -12,7 +12,6 @@ packages:
   - vlc
   - zed
   - docker
-  - google-drive
   - protonvpn
   - stats
   - bartender
@@ -31,6 +30,7 @@ packages:
   - ldns
   - atok
   - mas
+  - jetbrains-toolbox
 mas_apps:
   - 937984704 # Amphetamine
   - 549083868 # Display Menu
