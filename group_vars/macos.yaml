@@ -1,12 +1,9 @@
 packages:
   - ansible
-  - bash
   - xz
-  - asdf
   - bat
   - coreutils
   - sqlite
-  - direnv
   - wget
   - 1password-cli
   - burp-suite
@@ -18,10 +15,27 @@ packages:
   - google-drive
   - protonvpn
   - stats
-  - vmware-fusion
   - bartender
   - ferdium
   - notchnook
   - raycast
   - visual-studio-code
   - yubico-authenticator
+  - mise
+  - firefox
+  - font-hack-nerd-font
+  - font-hackgen-nerd
+  - gimp
+  - google-drive
+  - nmap
+  - ldns
+  - atok
+  - mas
+  - jetbrains-toolbox
+mas_apps:
+  - 937984704 # Amphetamine
+  - 549083868 # Display Menu
+  - 1346247457 # Endel
+  - 1532419400 # MeetingBar
+  - 490179405 # Okta Verify
+  - 497799835 # Xcode

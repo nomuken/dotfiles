@@ -1,5 +1,6 @@
 .PHONY: apply-mac
 apply-mac:
+	@ansible-galaxy install -r ./requirements.yaml
 	@./scripts/ansible.macos.sh
 
 .PHONY: apply-ubuntu
