@@ -14,7 +14,7 @@ packages:
   - scroll-reverser
   - vlc
   - zed
-  - docker
+  - docker-desktop
   - google-drive
   - protonvpn
   - stats
