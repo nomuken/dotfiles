@@ -110,3 +110,10 @@
     key: InitialKeyRepeat
     type: int
     value: 10
+- name: Hide Screenshot Floating Thumbnail
+  community.general.osx_defaults:
+    domain: com.apple.screencapture
+    key: show-thumbnail
+    type: bool
+    value: false
+  notify: Restart SystemUIServer
