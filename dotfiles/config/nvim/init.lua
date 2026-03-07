@@ -1,3 +1,12 @@
+local config_root = vim.fn.stdpath('config')
+vim.opt.rtp:prepend(config_root)
+package.path = package.path
+    .. ';'
+    .. config_root
+    .. '/?.lua;'
+    .. config_root
+    .. '/?/init.lua'
+
 require('plugins.lazy')
 
 vim.o.undofile = true

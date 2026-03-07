@@ -1,0 +1,39 @@
+[settings]
+focus_follows_mouse = true
+mouse_follows_focus = false
+
+animate = true
+default_disable = false
+
+inner_gap = 6
+outer_gap = 12
+
+group_bars.enable = true
+group_bars.thickness = 6
+group_bars.horizontal_placement = "top"
+group_bars.vertical_placement = "right"
+status_icon.enable = true
+
+default_keys = false
+
+[keys]
+"Alt + H" = { move_focus = "left" }
+"Alt + J" = { move_focus = "down" }
+"Alt + K" = { move_focus = "up" }
+"Alt + L" = { move_focus = "right" }
+
+"Alt + Shift + H" = { move_node = "left" }
+"Alt + Shift + J" = { move_node = "down" }
+"Alt + Shift + K" = { move_node = "up" }
+"Alt + Shift + L" = { move_node = "right" }
+
+"Alt + F" = "toggle_fullscreen"
+
+"Alt + T" = "toggle_window_floating"
+
+"Alt + Shift + E" = "ungroup"
+"Alt + Shift + Y" = { split = "horizontal" }
+"Alt + Y" = { group = "horizontal" }
+"Alt + Shift + X" = { split = "vertical" }
+"Alt + X" = { group = "vertical" }
+

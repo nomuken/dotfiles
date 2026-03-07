@@ -1,4 +1,8 @@
 - hosts: macos
+  vars_prompt:
+    - name: mac_password
+      prompt: "Enter sudo password for Homebrew Casks"
+      private: yes
   roles:
     - packages
     - alacritty
@@ -8,5 +12,5 @@
     - lsd
     - neovim
     - tmux
-    - yabai
+    - glide
     - preferences

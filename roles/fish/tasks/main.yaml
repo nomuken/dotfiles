@@ -15,12 +15,30 @@
   when: ansible_os_family == 'Archlinux'
 - name: "create .config directory"
   ansible.builtin.file:
-    path: "{{ home_dir }}/.config"
+    path: "{{ home_dir }}/.config/fish"
     state: directory
     mode: '0755'
 - name: "create symlink to fish config"
   ansible.builtin.file:
-    src: "{{ git_dir }}/dotfiles/config/fish"
-    dest: "{{ home_dir }}/.config/fish"
+    src: "{{ git_dir }}/dotfiles/config/fish/config.fish"
+    dest: "{{ home_dir }}/.config/fish/config.fish"
+    state: link
+    force: yes
+- name: "create symlink to fish variables"
+  ansible.builtin.file:
+    src: "{{ git_dir }}/dotfiles/config/fish/fish_variables"
+    dest: "{{ home_dir }}/.config/fish/fish_variables"
+    state: link
+    force: yes
+- name: "create symlink to fish prompts functions"
+  ansible.builtin.file:
+    src: "{{ git_dir }}/dotfiles/config/fish/functions/fish_prompt.fish"
+    dest: "{{ home_dir }}/.config/fish/functions/fish_prompt.fish"
+    state: link
+    force: yes
+- name: "create symlink to fish conf.d directory"
+  ansible.builtin.file:
+    src: "{{ git_dir }}/dotfiles/config/fish/conf.d"
+    dest: "{{ home_dir }}/.config/fish/conf.d"
     state: link
     force: yes

@@ -131,7 +131,6 @@ __pycache__/
 develop-eggs/
 eggs/
 .eggs/
-lib/
 lib64/
 parts/
 sdist/
@@ -285,3 +284,7 @@ override.tf.json
 .vscode/*
 .vscode
 *.code-workspace
+
+**/.claude/settings.local.json
+
+.serena

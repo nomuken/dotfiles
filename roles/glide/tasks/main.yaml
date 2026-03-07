@@ -1,0 +1,16 @@
+- name: Install glide
+  community.general.homebrew_tap:
+    name: koekeishiya/formulae
+- name: "install yabai and skhd"
+  community.general.homebrew:
+    name:
+      - glide
+    state: latest
+  when: ansible_os_family == 'Darwin'
+- name: "create symlink to glide"
+  ansible.builtin.file:
+    src: "{{ git_dir }}/dotfiles/config/glide"
+    dest: "{{ home_dir }}/.config/glide"
+    state: link
+    force: yes
+  when: ansible_os_family == 'Darwin'

@@ -15,6 +15,10 @@ if type direnv > /dev/null 2>&1
   direnv hook fish | source
 end
 
+if type -q npm
+  fish_add_path (npm prefix --location=global)/bin
+end
+
 # typo
 alias s lsd
 alias ks lsd
@@ -45,3 +49,10 @@ set -gx GOPATH $HOME/Develop/go
 set -gx PATH  $PATH $GOPATH/bin
 set -gx GO111MODULE on
 
+
+# Added by LM Studio CLI (lms)
+set -gx PATH $PATH /Users/nomuken/.lmstudio/bin
+
+# OpenHands CLI aliases
+alias openhands="uvx --python 3.12 --from openhands-ai openhands"
+alias oh="uvx --python 3.12 --from openhands-ai openhands"
