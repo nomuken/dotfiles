@@ -1,6 +1,6 @@
 - hosts: archlinux
   roles:
-    - alacritty
+    - ghostty
     - fish
     - git
     - i3

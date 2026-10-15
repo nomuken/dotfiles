@@ -1,6 +1,6 @@
 - hosts: ubuntu
   roles:
-    - alacritty
+    - ghostty
     - fish
     - git
     - i3

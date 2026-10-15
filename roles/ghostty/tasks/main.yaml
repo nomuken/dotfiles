@@ -1,0 +1,52 @@
+- name: "install ghostty for macOS"
+  community.general.homebrew:
+    name: ghostty
+    state: present
+  when: ansible_os_family == 'Darwin'
+- name: "install ghostty for Ubuntu"
+  ansible.builtin.apt:
+    name: ghostty
+    state: present
+  when: ansible_os_family == 'Debian'
+- name: "install alacritty for Archlinux"
+  community.general.pacman:
+    name: ghostty
+    state: latest
+  when: ansible_os_family == 'Archlinux'
+- name: "install HackGen font for macOS"
+  community.general.homebrew:
+    name: font-hackgen-nerd
+    state: present
+  when: ansible_os_family == 'Darwin'
+- name: "install HackGen font for Archlinux"
+  community.general.pacman:
+    executable: yay
+    name: ttf-hackgen
+    state: latest
+  when: ansible_os_family == 'Archlinux'
+- name: "Download HackGen font for Ubuntu"
+  ansible.builtin.get_url:
+    url: https://github.com/yuru7/HackGen/releases/download/v2.10.0/HackGen_v2.10.0.zip
+    dest: /tmp/HackGen_NF_v2.10.0.zip
+  when: ansible_os_family == 'Debian'
+- name: "Unzip HackGen font for Ubuntu"
+  ansible.builtin.unarchive:
+    src: /tmp/HackGen_NF_v2.10.0.zip
+    dest: /tmp/HackGen_NF_v2.10.0
+    remote_src: yes
+  when: ansible_os_family == 'Debian'
+- name: "Install HackGen font for Ubuntu"
+  ansible.builtin.shell:
+    cmd: "sudo cp /tmp/HackGen_NF_v2.10.0/*.ttf /usr/share/fonts/ && sudo fc-cache -f -v"
+  when: ansible_os_family == 'Debian'
+- name: "create .config directory"
+  ansible.builtin.file:
+    path: "{{ home_dir }}/.config"
+    state: directory
+    mode: '0755'
+- name: "create symlink to ghostty config"
+  ansible.builtin.file:
+    src: "{{ git_dir }}/dotfiles/config/ghostty"
+    dest: "{{ home_dir }}/.config/ghostty"
+    state: link
+    force: yes

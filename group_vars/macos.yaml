@@ -9,7 +9,6 @@ cask_packages:
   - stats
   - bartender
   - ferdium
-  - notchnook
   - raycast
   - visual-studio-code
   - yubico-authenticator

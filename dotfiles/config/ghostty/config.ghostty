@@ -1,0 +1,45 @@
+# Shell
+command = fish --login --command "tmux attach || tmux"
+shell-integration = fish
+
+# Window
+window-decoration = none
+background-opacity = 0.95
+
+# Colors
+background = #0f111a
+foreground = #D8DEE9
+cursor-color = #ff4151
+
+palette = 0=#4C566A
+palette = 1=#BF616A
+palette = 2=#A3BE8C
+palette = 3=#EBCB8B
+palette = 4=#81A1C1
+palette = 5=#B48EAD
+palette = 6=#88C0D0
+palette = 7=#E5E9F0
+
+# Font
+font-family = HackGen35 Console NF
+font-family-bold = HackGen35 Console NF
+font-family-italic = HackGen35 Console NF
+font-family-bold-italic = HackGen35 Console NF
+font-size = 14
+
+# Shell
+command = /opt/homebrew/bin/fish --login --command "tmux attach || tmux"
+shell-integration = fish
+
+# Window
+window-decoration = none
+background-opacity = 0.95
+
+quit-after-last-window-closed = true
+
+confirm-close-surface = false
+
+copy-on-select = false
+selection-clear-on-typing = true
+selection-clear-on-copy = false
+selection-word-chars = ",│`|:\\\"' ()[]{}<>\t"

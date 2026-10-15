@@ -31,6 +31,8 @@ default_keys = false
 
 "Alt + T" = "toggle_window_floating"
 
+"Alt + Z" = "toggle_space_activated"
+
 "Alt + Shift + E" = "ungroup"
 "Alt + Shift + Y" = { split = "horizontal" }
 "Alt + Y" = { group = "horizontal" }
