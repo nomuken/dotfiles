@@ -3,12 +3,12 @@
     name: "{{ item }}"
     state: latest
   with_items: "{{ packages }}"
-  when: ansible_os_family == 'Darwin'
+  when: ansible_facts['os_family'] == 'Darwin'
 - name: "install generic cask packages"
   community.general.homebrew_cask:
     name: "{{ item }}"
-    state: latest
+    state: "{{ (cask_package_states | default({})).get(item, 'latest') }}"
     sudo_password: "{{ mac_password }}"
     accept_external_apps: yes
   with_items: "{{ cask_packages }}"
-  when: ansible_os_family == 'Darwin'
+  when: ansible_facts['os_family'] == 'Darwin'

@@ -10,13 +10,13 @@
       debug:
         var: lookup("env", "PWD")
 
-    - name: debug ansible_env.PWD
+    - name: debug ansible_facts['env']['PWD']
       debug:
-        var: ansible_env.PWD
+        var: ansible_facts['env']['PWD']
 
-    - name: debug ansible_env
+    - name: debug ansible_facts['env']
       debug:
-        var: ansible_env
+        var: ansible_facts['env']
 
     - name: git_root_path
       debug:

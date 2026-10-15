@@ -4,14 +4,14 @@
       - i3
       - i3-status
     state: latest
-  when: ansible_os_family == 'Debian'
+  when: ansible_facts['os_family'] == 'Debian'
 - name: "install i3 for Archlinux"
   community.general.pacman:
     name:
       - i3-wm
       - i3status
     state: latest
-  when: ansible_os_family == 'Archlinux'
+  when: ansible_facts['os_family'] == 'Archlinux'
 - name: "create symlink to i3 config"
   ansible.builtin.file:
     src: "{{ git_dir }}/dotfiles/config/i3"

@@ -2,34 +2,34 @@
   community.general.homebrew:
     name: neovim
     state: present
-  when: ansible_os_family == 'Darwin'
+  when: ansible_facts['os_family'] == 'Darwin'
 - name: "install deps for macOS"
   community.general.homebrew:
     name: git
     state: latest
-  when: ansible_os_family == 'Darwin'
+  when: ansible_facts['os_family'] == 'Darwin'
 
 - name: "install neovim for Ubuntu"
   ansible.builtin.apt:
     name: neovim
     state: present
-  when: ansible_os_family == 'Debian'
+  when: ansible_facts['os_family'] == 'Debian'
 - name: "install deps for Ubuntu"
   ansible.builtin.apt:
     name: git
     state: present
-  when: ansible_os_family == 'Debian'
+  when: ansible_facts['os_family'] == 'Debian'
 
 - name: "install neovim for Archlinux"
   community.general.pacman:
     name: neovim
     state: latest
-  when: ansible_os_family == 'Archlinux'
+  when: ansible_facts['os_family'] == 'Archlinux'
 - name: "install deno and deps for Archlinux"
   community.general.pacman:
     name: git
     state: latest
-  when: ansible_os_family == 'Archlinux'
+  when: ansible_facts['os_family'] == 'Archlinux'
 
 - name: "create cache folder"
   ansible.builtin.file:

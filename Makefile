@@ -1,6 +1,6 @@
 .PHONY: apply-mac
 apply-mac:
-	@ansible-galaxy install -r ./requirements.yaml
+	@ansible-galaxy collection install -r ./requirements.yaml
 	@./scripts/ansible.macos.sh
 
 .PHONY: apply-ubuntu
@@ -14,3 +14,7 @@ apply-archlinux:
 .PHONY: debug
 debug:
 	@./scripts/ansible.debug.sh
+
+.PHONY: test
+test:
+	@python3 -m unittest discover -s tests -p 'test_*.py'

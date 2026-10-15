@@ -1,3 +1,6 @@
+# Parallels updates itself; Homebrew upgrades can fail in its uninstall script.
+cask_package_states:
+  parallels: present
 cask_packages:
   - burp-suite
   - parallels

@@ -2,17 +2,17 @@
   community.general.homebrew:
     name: lsd
     state: present
-  when: ansible_os_family == 'Darwin'
+  when: ansible_facts['os_family'] == 'Darwin'
 - name: "install lsd for ubuntu"
   ansible.builtin.apt:
     name: lsd
     state: present
-  when: ansible_os_family == 'Debian'
+  when: ansible_facts['os_family'] == 'Debian'
 - name: "install lsd for Archlinux"
   community.general.pacman:
     name: lsd
     state: latest
-  when: ansible_os_family == 'Archlinux'
+  when: ansible_facts['os_family'] == 'Archlinux'
 - name: "create .config directory"
   ansible.builtin.file:
     path: "{{ home_dir }}/.config"

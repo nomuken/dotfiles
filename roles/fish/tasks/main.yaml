@@ -2,17 +2,17 @@
   community.general.homebrew:
     name: fish
     state: latest
-  when: ansible_os_family == 'Darwin'
+  when: ansible_facts['os_family'] == 'Darwin'
 - name: "install fish for Ubuntu"
   ansible.builtin.apt:
     name: fish
     state: latest
-  when: ansible_os_family == 'Debian'
+  when: ansible_facts['os_family'] == 'Debian'
 - name: "install fish for Archlinux"
   community.general.pacman:
     name: fish
     state: latest
-  when: ansible_os_family == 'Archlinux'
+  when: ansible_facts['os_family'] == 'Archlinux'
 - name: "create .config directory"
   ansible.builtin.file:
     path: "{{ home_dir }}/.config/fish"
